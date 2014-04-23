@@ -1,5 +1,6 @@
 <g:set var="orgNameLong" value="${grailsApplication.config.skin.orgNameLong}"/>
 <g:set var="orgNameShort" value="${grailsApplication.config.skin.orgNameShort}"/>
+<g:set var="section" value="${pageProperty(name:'meta.section')}"/>
 <!DOCTYPE html>
 <html>
 <head>
