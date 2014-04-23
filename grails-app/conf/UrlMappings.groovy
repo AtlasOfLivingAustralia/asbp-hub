@@ -6,7 +6,9 @@ class UrlMappings {
                 // apply constraints here
             }
         }
-        //"/"(view:"/index")
+        "/"(view:"/index")
+        "/index"(controller: "home", action: "index")
+        "/search"(controller: "home", action: "index")
         "500"(view:'/error')
 	}
 }

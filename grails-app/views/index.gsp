@@ -1,122 +1,86 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta name="layout" content="${grailsApplication.config.skin.layout}"/>
-		<title>Welcome to Grails</title>
-		<style type="text/css" media="screen">
-			#status {
-				background-color: #eee;
-				border: .2em solid #fff;
-				margin: 2em 2em 1em;
-				padding: 1em;
-				width: 12em;
-				float: left;
-				-moz-box-shadow: 0px 0px 1.25em #ccc;
-				-webkit-box-shadow: 0px 0px 1.25em #ccc;
-				box-shadow: 0px 0px 1.25em #ccc;
-				-moz-border-radius: 0.6em;
-				-webkit-border-radius: 0.6em;
-				border-radius: 0.6em;
-			}
+<!DOCTYPE HTML>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta name="layout" content="${grailsApplication.config.skin.layout}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Australian Seed Bank Partnership</title>
+    <link rel="shortcut icon" href="http://seedpartnership.org.au/sites/default/files/favicon_32px_0.ico" type="image/vnd.microsoft.icon" />
+    <!--css from ala - to replace with full url-->
+    <link rel="stylesheet" href="${request.contextPath}/static/css/asbp/tabs-no-images.css" type="text/css" media="screen" />
+    <!--css for asbp-->
+    <link rel="stylesheet" href="${request.contextPath}/static/css/asbp/asbp_ala_seedhub.css" type="text/css" media="screen" />
+    <style type="text/css">
+    body {
+        /*width: 995px;*/
+    }
+    </style>
+</head>
 
-			.ie6 #status {
-				display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
-			}
+<body>
 
-			#status ul {
-				font-size: 0.9em;
-				list-style-type: none;
-				margin-bottom: 0.6em;
-				padding: 0;
-			}
+%{--<div id="main_content" class="">--}%
 
-			#status li {
-				line-height: 1.3;
-			}
+    <!--Header-->
+    %{--<div id="header">--}%
+        %{--<a href="http://seedpartnership.org.au/" title="Home" rel="home" id="logo">--}%
+            %{--<img src="http://seedpartnership.org.au/sites/default/files/seedbank_logo_0.png" alt="Home" border="0"/>--}%
+        %{--</a>--}%
+        %{--<!--Menu-->--}%
+        %{--<div id="nice_menus-1">--}%
+            %{--<ul class="nice-menu">--}%
+                %{--<li><a href="${request.contextPath}/search">Search</a></li>--}%
+                %{--<li><a href="${request.contextPath}/help/help.html">Help</a></li>--}%
+                %{--<li><a href="http://seedpartnership.org.au/about/aboutus" title="About Us">About Us</a></li>--}%
+                %{--<li><a href="http://seedpartnership.org.au/initiatives">Initiatives</a></li>--}%
+                %{--<li><a href="http://seedpartnership.org.au/partners" title="Partners and Associates">Partners and Associates</a></li>--}%
+                %{--<li><a href="http://seedpartnership.org.au/contact" title="Contact">Contact</a></li>--}%
+                %{--<li><a href="http://seedpartnership.org.au/">ASBP Home</a></li>--}%
+            %{--</ul>--}%
+        %{--</div>--}%
+    %{--</div>--}%
+    <!--end Header-->
+    <div class="breadcrumb">&nbsp;</div>
+    <h1>The Australian Seed Bank</h1>
+    <div class="home-menu-block">
+        <h2><a href="${request.contextPath}/search">Search</a></h2>
+        <h2><a href="http://seedpartnership.org.au/help.html">Help</a></h2>
+    </div>
+    <p>The Australian Seed Bank is an online resource for the review of conservation seed collections in Australia. It aims to support the planning of seed collection programs and offers some data to guide seed germination testing. Users of the Australian Seed Bank data are able to search and map collections of species made by the members of the <a href="http://seedpartnership.org.au/">Australian Seed Bank Partnership</a> across Australia as well as analyse germination information from some partners.</p>
+    <p>&nbsp;</p>
+    <div><img src="http://seedpartnership.org.au/sites/default/files/images/banner/banner_img_6.jpg" alt="Seed collections made for the Royal Tasmanian Botanical Gardens" width="310" height="215" title="Seed collections made for the Royal Tasmanian Botanical Gardens"> &nbsp;&nbsp; <img src="http://seedpartnership.org.au/sites/default/files/images/banner/banner_img_8.jpg" alt="Allocasuarina misera cones" title="Allocasuarina misera cones" width="310" height="215"> &nbsp;&nbsp; <img src="http://seedpartnership.org.au/sites/default/files/images/banner/banner_img_13.jpg" alt="Xanthorrhoea preissii seed rain"  title="Xanthorrhoea preissii seed rain" width="310" height="215"></div><br>
 
-			#status h1 {
-				text-transform: uppercase;
-				font-size: 1.1em;
-				margin: 0 0 0.3em;
-			}
+    <div><img src="http://seedpartnership.org.au/sites/default/files/seedhub_partner_logos.jpg" width="965" height="100" border="0" usemap="#Map" target="_blank">
+        <map name="Map">
+            <area shape="rect" coords="-2,1,99,97" href="http://www.anbg.gov.au/" target="_blank" alt="Australian National Botanic Gardens Seed Bank" title="Australian National Botanic Gardens Seed Bank">
+            <area shape="rect" coords="104,2,267,96" href="http://www.environment.sa.gov.au/botanicgardens/Gardens_and_Collections/Seed_Conservation_Centre_share" target="_blank" alt="South Australian Seed Conservation Centre, Botanic Gardens of Adelaide" title="South Australian Seed Conservation Centre, Botanic Gardens of Adelaide">
+            <area shape="rect" coords="269,4,447,97" href="http://www.bgpa.wa.gov.au/horticulture/wa-seed-tech-centre" target="_blank" alt="The Western Australia Seed Technology Centre, Kings Park and Botanic Garden" title="The Western Australia Seed Technology Centre, Kings Park and Botanic Garden">
+            <area shape="rect" coords="449,5,521,98" href="http://www.brisbane.qld.gov.au/facilities-recreation/parks-and-venues/parks/brisbane-botanic-gardens-mt-coot-tha/index.htm" target="_blank" alt="Brisbane Botanic Gardens Conservation Seed Bank, Brisbane City Council" title="Brisbane Botanic Gardens Conservation Seed Bank, Brisbane City Council">
+            <area shape="rect" coords="525,3,606,96" href="http://www.rbgsyd.nsw.gov.au/" target="_blank" alt="NSW Seedbank, The Royal Botanic Gardens and Domain Trust" title="NSW Seedbank, The Royal Botanic Gardens and Domain Trust">
+            <area shape="rect" coords="610,4,670,99" href="http://www.rbg.vic.gov.au/science/conservation-research/victorian-conservation-seedbank" target="_blank" alt="The Victorian Conservation Seedbank, Royal Botanic Gardens Melbourne" title="The Victorian Conservation Seedbank, Royal Botanic Gardens Melbourne">
+            <area shape="rect" coords="673,4,905,96" href="http://www.dec.wa.gov.au/content/view/2933/1955/1/1/" target="_blank" alt="Threatened Flora Seed Centre, Department of Environment and Conservation, Western Australia" title="Threatened Flora Seed Centre, Department of Environment and Conservation, Western Australia">
+            <area shape="rect" coords="906,4,967,97" href="http://www.rtbg.tas.gov.au/index.aspx?base=157" target="_blank" alt="SeedSafe – Tasmania, Royal Tasmanian Botanical Gardens" title="SeedSafe – Tasmania, Royal Tasmanian Botanical Gardens">
+        </map>
+    </div>
 
-			#page-body {
-				margin: 2em 1em 1.25em 18em;
-			}
+%{--</div>--}%
 
-			h2 {
-				margin-top: 1em;
-				margin-bottom: 0.3em;
-				font-size: 1em;
-			}
+<!--Footer-->
+%{--<div class="footer">--}%
+    %{--<div style="background: url(http://seedpartnership.org.au/sites/all/themes/seedbank/images/footer_slogan.gif) no-repeat right bottom; height: 42px; vertical-align: top"></div>--}%
+    %{--<div style="font-size: 0.75em; float:left;">Copyright © 2012 Council of Heads of Australian Botanic Gardens Inc. (CHABG)</div>--}%
+    %{--<div style="font-size: 0.75em; text-align:right;"><a href="http://seedpartnership.org.au/privacy">Privacy &amp; Disclaimer</a></div>--}%
+    %{--<div style="float: right;"><a href="http://www.ala.org.au/" target="_black"><img src="${request.contextPath}/static/images/atlas-poweredby_rgb-lightbg.png" alt="" border="0"/></a></div>--}%
+%{--</div>--}%
 
-			p {
-				line-height: 1.5;
-				margin: 0.25em 0;
-			}
 
-			#controller-list ul {
-				list-style-position: inside;
-			}
-
-			#controller-list li {
-				line-height: 1.3;
-				list-style-position: inside;
-				margin: 0.25em 0;
-			}
-
-			@media screen and (max-width: 480px) {
-				#status {
-					display: none;
-				}
-
-				#page-body {
-					margin: 0 1em 1em;
-				}
-
-				#page-body h1 {
-					margin-top: 0;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div id="status" role="complementary">
-			<h1>Application Status</h1>
-			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${GroovySystem.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
-		</div>
-		<div id="page-body" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
-
-			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
-				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
-				</ul>
-			</div>
-		</div>
-	</body>
-</html>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-4355440-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+</script>
+</body>
+</html> 

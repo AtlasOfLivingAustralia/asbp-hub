@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="${request.contextPath}/images/favicon.ico">
 
     <title><g:layoutTitle /></title>
-    <r:require modules="obis" />
+    <r:require modules="asbp" />
     <style type="text/css">
         body {
             background-color: #ffffff !important;
@@ -97,69 +97,46 @@
 <g:set var="fluidLayout" value="${grailsApplication.config.skin.fluidLayout?.toBoolean()}"/>
 <alatag:outageBanner />
 
-<nav>
-    <div class="container">
-        <ul id="nav-site">
-            <li><a href="${request.contextPath}/">Home</a></li>
-            <li class="${(section=='search')?'selected':''}"><a href="${request.contextPath}/search">Search</a></li>
-            <li class="${(section!='search' && section!='yourArea')?'selected':''}"><a href="${request.contextPath}/occurrences/search">Records</a></li>
-            <li class="${(section=='yourArea')?'selected':''}"><a href="${request.contextPath}/explore/your-area">Your Area</a></li>
-        </ul>
-        <ul id="nav-user">
-            <li><a href="http://www.ala.org.au/my-profile/" title="My profile">My profile</a></li>
-            <g:set var="returnUrlPath" value="${serverName}${request.requestURI}${request.queryString ? '?' : ''}${request.queryString}"/>
-            <li class="last"><hf:loginLogout logoutUrl="${request.contextPath}/logout/logout" returnUrlPath="${returnUrlPath}"/></li>
-        </ul>
-    </div>
-</nav>
-<header id="site-header">
-    <div class="container">
-        <h1 title="${fullName}"><a href=""><img src="${request.contextPath}/static/images/obis/logo-small.png" /></a></h1>
-        <section>
-            <div id="search">
-                <form name="siteSearchForm" id="siteSearchForm" action="${request.contextPath}/occurrences/search" method="GET">
-                    <label for="search">Quick search</label>
-                    <input id="taxaQuery" title="Search" type="text" name="taxa" placeholder="Quick search" class="ac_input freetext" value="${params.taxa}" /><button value="Search" type="submit">Search</button>
-                </form>
-            </div>
-            <p><strong>More options</strong>: <a href="${request.contextPath}/index#tab_advanceSearch">Advanced search</a>,
-                <a href="${request.contextPath}/index#tab_taxaUpload">Batch taxon search</a>,
-                <a href="${request.contextPath}/index#tab_catalogUpload">Batch catalogue no. search</a>,
-                <a href="${request.contextPath}/index#tab_shapeFileUpload">Shapefile search</a></p>
-        </section>
-    </div>
-</header>
-<div id="content">
-    <section class="container">
+<div id="main_content" class="container">
+    <!--Header-->
+    <div id="header">
+        <a href="http://seedpartnership.org.au/" title="Home" rel="home" id="logo">
+            <img src="http://seedpartnership.org.au/sites/default/files/seedbank_logo_0.png" alt="Home" border="0"/>
+        </a>
+        <!--Menu-->
+        <div id="nice_menus-1">
+            <ul class="nice-menu">
+                <li class="active-trail"><a class="${(!section || section!='help')?'active':''}" href="${request.contextPath}/search">Search</a></li>
+                <li><a class="${(section=='help')?'active':''}" href="${request.contextPath}/help/help.html">Help</a></li>
+                <li class="hidden-phone"><a href="http://seedpartnership.org.au/about/aboutus" title="About Us">About Us</a></li>
+                <li class="hidden-phone"><a href="http://seedpartnership.org.au/initiatives">Initiatives</a></li>
+                <li class="hidden-phone"><a href="http://seedpartnership.org.au/partners" title="Partners and Associates">Partners and Associates</a></li>
+                <li class="hidden-phone"><a href="http://seedpartnership.org.au/contact" title="Contact">Contact</a></li>
+                <li><a href="http://seedpartnership.org.au/">ASBP Home</a></li>
+            </ul>
+        </div>
+    </div><!--end Header-->
+    <div id="content">
         <g:layoutBody />
-    </section>
-</div><!-- end div#inner -->
-<footer class="">
-    <div class="container">
-        <section class="copyright">
-            <div class="img-left"><a href="http://creativecommons.org/licenses/by/3.0/au/"
-                                     title="External link to Creative Commons"><img
-                    src="http://www.ala.org.au/wp-content/themes/ala2011/images/creativecommons.png" width="88"
-                    height="31" alt=""/></a></div>
-            <p><a href="${request.contextPath}/help/termsOfUse" title="Terms of Use">Terms of Use</a> |
-                <a href="${request.contextPath}/help/contactObis">Contact</a><br/>This site is licensed
-                under a <a href="http://creativecommons.org/licenses/by/3.0/au/"
-                           title="External link to Creative Commons" class="external">Creative Commons Attribution
-                    3.0 Australia License</a>.</p>
-
-            <div class="img-right"><a href="http://www.ala.org.au" title="Atlas of Living Australia"><img
-                    src="http://www.ala.org.au/wp-content/themes/ala2011/images/poweredby-ala.png" width="178"
-                    height="62" alt=""/></a></div>
-        </section>
     </div>
-</footer>
+
+</div><!--end main_content-->
+
+<!--Footer-->
+<div class="footer container">
+    <div style="background: url(http://seedpartnership.org.au/sites/all/themes/seedbank/images/footer_slogan.gif) no-repeat right bottom; height: 42px; vertical-align: top"></div>
+    <div style="font-size: 0.75em; float:left;">Copyright &copy; 2012 Council of Heads of Australian Botanic Gardens Inc. (CHABG)</div>
+    <div style="font-size: 0.75em; text-align:right;"><a href="http://seedpartnership.org.au/privacy">Privacy &amp; Disclaimer</a></div>
+    <div style="float: right;"><a href="http://www.ala.org.au/" target="_black"><img src="${request.contextPath}/images/atlas-poweredby_rgb-lightbg.png" alt="" border="0"/></a></div>
+</div>
+
 <%--<script type="text/javascript">--%>
-    <%--var uvOptions = {};--%>
-    <%--(function() {--%>
-        <%--var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;--%>
-        <%--uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/5XG4VblqrwiubphT3ktPQ.js';--%>
-        <%--var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);--%>
-    <%--})();--%>
+<%--var uvOptions = {};--%>
+<%--(function() {--%>
+<%--var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;--%>
+<%--uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/5XG4VblqrwiubphT3ktPQ.js';--%>
+<%--var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);--%>
+<%--})();--%>
 <%--</script>--%>
 <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
