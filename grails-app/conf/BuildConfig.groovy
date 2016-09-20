@@ -50,7 +50,7 @@ grails.project.dependency.resolution = {
     plugins {
         build ":release:3.0.1"
         // plugins for the build system only
-        build ":tomcat:7.0.50"
+        build ":tomcat:7.0.54"
 
         // plugins for the compile step
         //compile ":scaffolding:2.0.1"
@@ -60,14 +60,15 @@ grails.project.dependency.resolution = {
         //runtime ":hibernate:3.6.10.7" // or ":hibernate4:4.1.11.6"
         //runtime ":database-migration:1.3.8"
         //runtime ":jquery:1.10.2.2"
-        runtime ":resources:1.2.1"
+        runtime ":resources:1.2.8"
         runtime ":cached-resources:1.0"
         //runtime ":zipped-resources:1.0"
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
-        runtime ":biocache-hubs:1.1"
-        runtime ":ala-web-theme:0.8.1"
+        compile ':ala-auth:1.3.4'        
+        runtime ":biocache-hubs:1.2-SNAPSHOT"
+        runtime ":ala-web-theme:0.8.7"
     }
 }
