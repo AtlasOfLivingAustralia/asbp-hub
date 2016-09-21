@@ -69,6 +69,6 @@ grails.project.dependency.resolution = {
         //runtime ":yui-minify-resources:0.1.5"
         compile ':ala-auth:1.3.4'        
         runtime ":biocache-hubs:0.75"
-        runtime ":ala-web-theme:0.8.4"
+        runtime ":ala-web-theme:0.8.3"
     }
 }
