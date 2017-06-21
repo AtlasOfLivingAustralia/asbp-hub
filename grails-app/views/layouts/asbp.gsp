@@ -95,7 +95,7 @@
 </head>
 <body class="${pageProperty(name:'body.class')?:'nav-collections'}" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">
 <g:set var="fluidLayout" value="${grailsApplication.config.skin.fluidLayout?.toBoolean()}"/>
-<alatag:outageBanner />
+<ala:systemMessage />
 
 <div id="main_content" class="container">
     <!--Header-->
