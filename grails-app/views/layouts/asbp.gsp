@@ -8,10 +8,12 @@
     <alatag:addApplicationMetaTags/>
     <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1">
 
-    <link rel="shortcut icon" href="${request.contextPath}/images/favicon.ico">
+    <asset:link rel="shortcut icon" href="favicon.ico" />
 
     <title><g:layoutTitle /></title>
-    <r:require modules="asbp" />
+   %{-- <r:require modules="asbp" />--}%
+    <asset:javascript src="application.js"/>
+    <asset:stylesheet src="asbp_ala_seedhub.css"/>
     <style type="text/css">
         body {
             background-color: #ffffff !important;
@@ -41,7 +43,8 @@
             font-size: 20px;
         }
     </style>
-    <r:script disposition='head'>
+   %{-- <r:script disposition='head'>--}%
+   <asset:script type="text/javascript">
         // initialise plugins
         jQuery(function(){
             // autocomplete on navbar search input
@@ -89,8 +92,8 @@
 
             $('.helphover').popover({animation: true, trigger:'hover'});
         });
-    </r:script>
-    <r:layoutResources/>
+   </asset:script>
+    %{--<r:layoutResources/>--}%
     <g:layoutHead />
 </head>
 <body class="${pageProperty(name:'body.class')?:'nav-collections'}" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">
@@ -140,6 +143,6 @@
 </script>
 
 <!-- JS resources-->
-<r:layoutResources/>
+<asset:deferredScripts/>
 </body>
 </html>

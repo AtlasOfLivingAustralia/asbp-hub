@@ -1,3 +1,10 @@
+/*
+*= require asbp_ala_seedhub.css
+*= require hub-additions.css
+*= require bootstrap/css/bootstrap.css
+*= require bootstrap/css/bootstrap-theme.min.css
+*/
+
 /* The Australian Seed Bank styles for ALA 120928*/
 
 /*text styles*/
@@ -10,6 +17,7 @@ body {
     margin: 0 auto;
     padding-top: 1em;
     background-color: #FFFFFF;
+    font-size: 14.4px;
     /*width: 995px; *//* was 965px */
 }
 a:link {
