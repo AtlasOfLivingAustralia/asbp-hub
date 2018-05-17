@@ -202,3 +202,25 @@ ul.nav-tabs {
 #headingBar #jsonLink {
     display: none;
 }
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border-top: 1px solid #bbb;
+    border-left: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #bbb;
+}
+
+.tab-content {
+    padding: 15px;
+    border-bottom: 1px solid #bbb !important;
+    border-right: 1px solid #bbb !important;
+    border-left: 1px solid #bbb !important;
+}
+
+#content2 {
+    margin-left: 0px !important;
+    margin-top: -20px !important;
+}
