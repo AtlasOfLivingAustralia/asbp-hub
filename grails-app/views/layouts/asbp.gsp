@@ -130,7 +130,7 @@
     <div style="background: url(https://seedpartnership.org.au/sites/all/themes/seedbank/images/footer_slogan.gif) no-repeat right bottom; height: 42px; vertical-align: top"></div>
     <div style="font-size: 0.75em; float:left;">Copyright &copy; 2012 Council of Heads of Australian Botanic Gardens Inc. (CHABG)</div>
     <div style="font-size: 0.75em; text-align:right;"><a href="https://seedpartnership.org.au/privacy">Privacy &amp; Disclaimer</a></div>
-    <div style="float: right;"><a href="https://www.ala.org.au/" target="_black"><img src="${request.contextPath}/images/atlas-poweredby_rgb-lightbg.png" alt="" border="0"/></a></div>
+    <div style="float: right;"><a href="https://www.ala.org.au/" target="_black"><asset:image src="atlas-poweredby_rgb-lightbg.png" alt="" border="0"/></a></div>
 </div>
 
 <script type="text/javascript">
