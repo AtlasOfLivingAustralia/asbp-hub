@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="shortcut icon" href="${request.contextPath}/images/favicon.ico">
+    <asset:link rel="shortcut icon" href="favicon.ico" />
 
     <title>Error | ${orgNameLong}</title>
 </head>
@@ -16,11 +16,11 @@
     <ul class="errors">
         <g:renderException exception="${exception}" />
     </ul>
-<g:if test="${flash.message}">
-    <ul class="errors">
-        <li>${flash.message}</li>
-    </ul>
-</g:if>
+    <g:if test="${flash.message}">
+        <ul class="errors">
+            <li>${flash.message}</li>
+        </ul>
+    </g:if>
 </div>
 </body>
 </html>
