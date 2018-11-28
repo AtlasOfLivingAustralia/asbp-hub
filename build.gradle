@@ -77,7 +77,7 @@ dependencies {
     compile 'org.grails.plugins:external-config:1.1.1'
 
    // runtime "org.grails.plugins:ala-bootstrap3:3.0.1"
-    compile "org.grails.plugins:ala-auth:3.0.2"
+    compile "org.grails.plugins:ala-auth:3.1.0"
 
   //  compile "org.grails.plugins:jquery:1.11.1"
   //  if(!inplace) {
