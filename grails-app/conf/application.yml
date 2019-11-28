@@ -137,7 +137,7 @@ skin:
     taxaLinks:
        baseUrl:  "https://bie.ala.org.au/species/"
 privacyPolicy: "https://www.ala.org.au/about/terms-of-use/privacy-policy/"
-
+useDownloadPlugin: true
 map:
     pointColour: "df4a21"
     zoomOutsideScopedRegion: false
