@@ -27,7 +27,7 @@ info:
         name: '@info.app.name@'
         version: '@info.app.version@'
         grailsVersion: '@info.app.grailsVersion@'
-        description: 'The Australasian Virtual Herbarium'
+        description: 'The Australian Seed Bank'
 spring:
     main:
         banner-mode: "off"
@@ -111,7 +111,7 @@ bie:
 
 biocache:
   baseUrl: "https://biocache.ala.org.au/ws"
-  apiKey: "api-key-to-use"
+  apiKey: "not-your-api-key-to-use"
   queryContext: "data_hub_uid:dh4" # data hub uid
 
 spatial:
@@ -135,9 +135,9 @@ skin:
     fluidLayout: true
     useAlaBie: true
     taxaLinks:
-       baseUrl:  "http://bie.ala.org.au/species/"
-privacyPolicy: "http://www.ala.org.au/about/terms-of-use/privacy-policy/"
-
+       baseUrl:  "https://bie.ala.org.au/species/"
+privacyPolicy: "https://www.ala.org.au/about/terms-of-use/privacy-policy/"
+useDownloadPlugin: true
 map:
     pointColour: "df4a21"
     zoomOutsideScopedRegion: false

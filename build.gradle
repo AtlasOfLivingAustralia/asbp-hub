@@ -17,7 +17,7 @@ plugins {
     id "com.gorylenko.gradle-git-properties" version "1.4.17"
 }
 
-version "2.0.1"
+version "2.1.4.1"
 group "au.org.ala"
 
 apply plugin:"eclipse"
@@ -43,7 +43,7 @@ configurations.all {
 }
 
 // Inplace plugin config
-//def inplace = false
+def inplace = false
 // Set to true it needed only for development
 
 dependencies {
@@ -77,18 +77,12 @@ dependencies {
     compile 'org.grails.plugins:external-config:1.1.1'
 
    // runtime "org.grails.plugins:ala-bootstrap3:3.0.1"
-    compile "org.grails.plugins:ala-auth:3.0.2"
+    compile "org.grails.plugins:ala-auth:3.1.0"
+    compile "au.org.ala.plugins.grails:downloads-plugin:2.0.9"
 
-  //  compile "org.grails.plugins:jquery:1.11.1"
-  //  if(!inplace) {
-        compile "au.org.ala.plugins.grails:biocache-hubs:2.0.5"
-  //  } else {
- //       compile project('biocache-hubs')
-   // }
-    //compile "au.org.ala.plugins.grails:ala-ws-plugin:2.0"
-        runtime "au.org.ala.plugins.grails:downloads-plugin:2.0.4"
-   // }
-
+    if (!inplace) {
+        compile "au.org.ala.plugins.grails:biocache-hubs:2.1.4"
+    }
 }
 
 springBoot {
