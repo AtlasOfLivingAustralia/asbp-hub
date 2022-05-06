@@ -1,1 +1,9 @@
-rootProject.name = 'asbp-hub'
+rootProject.name='asbp-hub'
+// Inplace plugin config
+// Set to true it needed only for development
+boolean inplace = false
+
+if (inplace) {
+    include 'biocache-hubs'
+    project(':biocache-hubs').projectDir = new File('../biocache-hubs')
+}

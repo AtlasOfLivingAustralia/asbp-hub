@@ -1,0 +1,680 @@
+/* Global
+-------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+/*input[type=text] {
+    box-sizing: content-box;
+}*/
+
+#colophon {
+    margin-top: 40px !important;
+    background-color: #f0f0e8 !important;
+    border-top: 1px solid #d1d1d1 !important;
+    border-bottom: 1px solid #d1d1d1 !important;
+    font-size: 12px !important;
+    line-height: 1.6em !important;
+    color: #333a3f !important;
+}
+
+#main-content {
+    margin-top: 26px !important;
+}
+
+#headingBar h1 {
+    margin-bottom: 26px !important;
+    font-size: 26px !important;
+    color: #5f5d60 !important;
+    font-family: "Raleway", Arial, "Helvetica Neue", sans-serif !important;
+}
+
+body {
+    padding-top: 0;
+    overflow-y: scroll;
+}
+
+body h1, body h2, body h3, body h4, body h5 {
+    font-weight:300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+a, .btn-link, .text-info {
+    color: #5C5CAD; /* Purple */
+}
+
+a.newDownload {
+    color: #FFFFFF !important;
+}
+
+a:hover, a:focus, .btn-link:focus, .btn-link:hover {
+    color: #8e8ed4; /* Light Purple */
+}
+
+/*.btn-default {
+    text-shadow: 0 1px 0 #fff;
+    background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
+}*/
+
+*::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container::before, .container::after, .nav-collapse::before, .nav-collapse::after {
+    content: "";
+    display: table;
+}
+
+/* Navigation
+-------------------------------*/
+#asbp-nav {
+    margin-bottom: 0;
+    background-color: #f8f8f8;
+    background-image: linear-gradient(to bottom, #fff, #f2f2f2);
+    background-repeat: repeat-x;
+    border: 1px solid #d4d4d4;
+}
+
+#asbp-nav .container, #site-branding .container,
+#main-content.container, footer .container {
+    width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#asbp-nav .navbar-inner {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+#asbp-nav .btn-navbar {
+    border: none;
+}
+
+.navbar-collapse {
+    padding: 0;
+}
+
+#asbp-nav a, #asbp-nav a>.caret, #asbp-nav a:hover, #asbp-nav a:hover {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#asbp-nav .navbar-nav a i.fa {
+    font-size: 20px;
+}
+
+#asbp-nav .navbar-nav a i.fa-facebook-square {
+    color: #5C5CAD;
+}
+
+#asbp-nav a:hover .caret {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#asbp-nav li a {
+    padding-top: 14px;
+    padding-bottom: 13px;
+}
+
+@media (min-width: 768px) {
+    #asbp-nav .nav.navbar-nav.pull-right:last-child {
+        margin-right: 10px;
+    }
+}
+
+#asbp-nav li a.facebook-link {
+    color: #FF9933;
+}
+
+
+/* Site branding
+--------------------------------*/
+.site-branding {
+    background-color: #FF9933;
+    margin-bottom: 16px;
+}
+
+.site-logo {
+    float: left;
+    padding: 30px 15px 15px 0;
+}
+
+.site-logo img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: -5px;
+}
+
+@media (min-width: 600px) {
+    .site-logo {
+        padding-right: 25px;
+    }
+
+    .site-logo img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 0;
+    }
+}
+
+.site-header {
+    float: left;
+}
+
+#site-branding .site-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 60px;
+    font-weight: 300;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 20px;
+}
+
+#site-branding .site-title a, #site-branding .site-description {
+    color: #fff !important;
+}
+
+.site-description {
+    margin-top: 0;
+    margin-bottom: 25px;
+    line-height: 1.1;
+    font-size: 22.75px;
+}
+
+#site-branding a:hover {
+    text-decoration: none;
+}
+
+div#rightMenu, #rightMenu a {
+    color: #fff !important;
+}
+
+@media (min-width: 768px) {
+    div#rightMenu {
+        margin-top: 115px;
+        text-align: right;
+    }
+}
+
+/* footer
+--------------------------*/
+footer {
+    padding-bottom: 20px;
+}
+
+footer .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+footer .textwidget {
+    margin-top: 10px;
+}
+
+.col-sm-6 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.contact-us .textwidget a {
+    color: #000;
+}
+
+img.poweredByAlaLogo {
+    height: 65px;
+    margin: 5px;
+}
+
+.contact-us .textwidget a {
+    color: #5C5CAD;
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    .col-sm-6 {
+        float: left;
+        width: 50%;
+    }
+
+    .contact-us .textwidget {
+        text-align: right;
+    }
+
+    .contact-us .textwidget a {
+        display: inline-block;
+        margin-top: 45px;
+    }
+}
+
+
+
+/* Leaflet attribution control
+------------------------------------------------*/
+#main-content .leaflet-container a {
+    color: #006600;
+}
+
+/* Override some Bootstrap stuff
+------------------------------------------------*/
+@media (min-width: 768px) {
+    #asbp-nav .nav.pull-right:last-child {
+        margin-right: 0;
+    }
+}
+
+/* Colour for highlighted text in drop-down
+-------------------------------------------------*/
+.ac_results li strong {
+    color: #006600;
+}
+
+/* Facets
+-------------------------------------------------*/
+#facetWell .sidebar h4 {
+    margin-top: 10px;
+}
+
+#facetWell span.fa.fa-square-o {
+    margin-right: 3px;
+}
+
+body #main-content #customiseFacetsButton > .dropdown-menu, #main-content #resultsReturned .dropdown-menu {
+    background-color: white;
+}
+
+#customiseFacetsButton h4 {
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 510px;
+}
+
+.padding-left-1 {
+    padding-left: 1em;
+}
+
+.btn-primary {
+    color: #ffffff !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #8080c4;
+    background-image: -moz-linear-gradient(top, #8080c4, #5C5CAD);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#8080c4), to(#5C5CAD));
+    background-image: -webkit-linear-gradient(top, #8080c4, #5C5CAD);
+    background-image: -o-linear-gradient(top, #8080c4, #5C5CAD);
+    background-image: linear-gradient(to bottom, #8080c4, #5C5CAD) !important;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff007fb6', endColorstr='#ff0042b6', GradientType=0);
+    border-color: #5C5CAD #5C5CAD #406e11;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    background-color: #8080c4;
+    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+    color: #ffffff;
+    background-color: #5C5CAD !important;
+  /*  *background-color: #5C5CAD;*/
+}
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #406e11;
+}
+
+/* from base.css */
+a:hover, #content2 a:hover {
+    text-decoration: underline;
+}
+
+#nav li a {
+    font-size: 16px;
+}
+#contentBox {
+    width: 1000px;
+}
+label {
+    display: inline;
+}
+input, textarea, select, button {
+    margin: 0;
+}
+form input {
+    padding: 0;
+}
+form p input {
+    float: none
+}
+table th {
+    text-align: left;
+    padding: 6px 12px;
+    font-weight: bold;
+    color: #444;
+}
+table td, table th  {
+    text-align: left;
+    padding: 4px 6px;
+    line-height: 1.3em;
+    vertical-align: top;
+    color: #666;
+}
+table.compact, table.nested {
+    width: 100%;
+    margin: 2px 0 4px 0;
+}
+#content3 table.compact  {
+    border-bottom: 1px solid #CCC;
+}
+table.compact thead {
+    border: none;
+}
+table.compact th, table.compact td {
+    padding: 4px;
+}
+table.nested th, table.nested td {
+    padding: 0;
+}
+td.labels {
+    width: 170px;
+}
+
+
+
+
+
+#advancedSearch {
+    display: none;
+    margin-top: 5px;
+    padding: 5px;
+    border: 2px solid #CCC;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+input.taxaLookup {
+    float: right;
+    margin-right: 10px;
+}
+div.autoLine2 {
+    color: #777;
+}
+.matchedName {
+    display: inline-block;
+    padding: 2px 8px 4px 8px;
+    margin-right: 10px;
+    border: 0px solid #CCC;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    background-color: #C5DCEE;
+    max-width: 90%;
+    float: left;
+    max-height: 15px;
+    overflow: hidden;
+}
+#taxonSearchHint {
+    font-size: 12px;
+    margin-top: 5px;
+}
+table.compact td select {
+    width: auto;
+}
+input.region_autocomplete {
+    width: 350px;
+}
+#contentBox div.imageThumb {
+    float: left;
+    padding: 2px;
+    line-height: 0;
+}
+div.fullWidthHeader {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    padding-left: 0 !important;
+    border-bottom: 2px solid gray;
+}
+span#taxonName {
+    color: black;
+}
+#content2 div.taxaDescription p {
+    padding-bottom: 10px;
+}
+.bold {
+    font-weight: bold;
+}
+
+.freetext {
+    font-size: 16px;
+}
+
+.freetext {
+    font-size: 16px;
+}
+
+#userFlaggedIssuesDetails {
+    text-align: left;
+}
+
+#userFlaggedIssuesDetails p {
+    margin-top:5px;
+    padding:3px;
+    border-bottom: 1px solid #CCC;
+}
+
+#simpleSearchDiv  input[type=text] {
+    width: 240px;
+}
+
+#simpleSearchDiv  input.occurrence_date {
+    width: 110px;
+}
+
+#extendedOptions {
+    padding-left:10px;
+}
+
+.toggleSection {
+    display:block;
+    padding-left: 10px;
+    padding-top: 7px;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #DDD;
+}
+#extendedOptions {
+display: none;
+}
+a.toggleTitle {
+    background: url("../../images/plus.gif") 0 5px no-repeat;
+    display: block;
+    padding-left: 14px;
+    font-weight: bold;
+    color: #5C5CAD !important;
+}
+a.toggleTitleActive {
+    background: url("../../images/minus.gif") 0 5px  no-repeat;
+    display: block;
+    padding-left: 14px;
+}
+a.toggleOptions {
+    background: url("../../images/plus.gif") 0 3px no-repeat;
+    display: block;
+    padding-left: 14px;
+}
+a.toggleOptionsActive {
+    background: url("../../images/minus.gif") 0 3px  no-repeat;
+    display: block;
+    padding-left: 14px;
+}
+#content3 #simpleSearchDiv table.compact  {
+    border-bottom: none;
+}
+table#taxonomyOptions {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+/*#taxonSearchDiv {
+border-bottom: 1px solid #DDD;
+border: 1px solid #AAA !important;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-khtml-border-radius: 5px;
+border-radius: 5px;
+width: 95%;
+}*/
+
+#advancedSearchForm select {
+    width: 300px;
+}
+
+.sidebar h3 {
+    font-size: 16px;
+}
+
+#listHeader h1 {
+    font-size: 26px;
+}
+
+#nameMatchingOptions {
+    display:none;
+}
+
+abbr {
+    border-bottom: black dashed 1px;
+    cursor: help;
+}
+
+/* Bootstrap tabs CSS */
+
+.tab-content {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+#content ul.nav-tabs {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+#content .nav-tabs > .active > a,
+#content .nav-tabs > .active > a:hover,
+#content .nav-tabs > .active > a:focus,
+#content #facetWell {
+    background-color: #F0F0E8;
+    background-image: none;
+}
+
+#content .nav-tabs li:not(.active) a {
+    background-color: #fffef7;
+    border: 1px solid #ddd;
+}
+
+.tab-content {
+    background-color: #F0F0E8;
+}
+
+#taxonSearchDiv .radio {
+    margin: 5px;
+    font-size: 13px;
+}
+
+/* Download div */
+div#download {
+    display: none;
+font-size: 13px;
+line-height: 1.4em;
+}
+#downloadForm, #downloadMapForm {
+text-align: left;
+}
+#downloadForm label, #downloadMapForm label {
+width: 35%;
+display: inline-block;
+text-align: right;
+padding-right: 10px;
+color: #444;
+}
+#download p, #downloadMapForm p {
+margin: 0;
+}
+#downloadForm input, #downloadMapForm input, #downloadMapForm select {
+float: none;
+margin: 0;
+}
+#downloadMapForm p {
+padding: 4px 6px;
+}
+#termsOfUseDownload {
+text-align:left; padding-bottom:15px;
+}
+#breadcrumb ul, #breadcrumb ol  {
+margin-bottom: 2px;
+}
+
+#advancedSearchForm table {
+    width: 100%;
+}
+
+#advancedSearchForm td {
+    vertical-align: middle;
+}
+
+#advancedSearchForm input, #advancedSearchForm select, #advancedSearchForm  textarea, #simpleSearchForm input {
+    margin-bottom: 0;
+}
+
+#advancedSearchForm input[type=text] {
+    width: 35%;
+}
+
+#advancedSearchForm input.occurrence_date {
+    width: 15%;
+}
+
+.tooltip {
+    word-wrap: break-word;
+}
+.tooltip-inner {
+    max-width: none;
+}
+
+/* Override the biocache-hubs jQuery.hover styling */
+#results .recordRow:hover {
+    background-color: rgba(255, 254, 247, 0.7) !important;
+}
+
+#excluded .exclude-count-label {
+    color: inherit;
+    font-style: normal;
+    font-weight: bold;
+}

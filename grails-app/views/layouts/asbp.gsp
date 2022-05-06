@@ -1,148 +1,169 @@
+%{--
+  - Copyright (C) 2014 Atlas of Living Australia
+  - All Rights Reserved.
+  -
+  - The contents of this file are subject to the Mozilla Public
+  - License Version 1.1 (the "License"); you may not use this file
+  - except in compliance with the License. You may obtain a copy of
+  - the License at http://www.mozilla.org/MPL/
+  -
+  - Software distributed under the License is distributed on an "AS
+  - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+  - implied. See the License for the specific language governing
+  - rights and limitations under the License.
+  --}%
+
+<%--
+  Created by IntelliJ IDEA.
+  User: dos009@csiro.au
+  Date: 5/03/2014
+  Time: 1:48 PM
+  To change this template use File | Settings | File Templates.
+--%>
+
+<%@ page contentType="text/html;charset=UTF-8" %>
+<g:set var="serverName" value="${grailsApplication.config.serverName}"/>
 <g:set var="orgNameLong" value="${grailsApplication.config.skin.orgNameLong}"/>
 <g:set var="orgNameShort" value="${grailsApplication.config.skin.orgNameShort}"/>
-<g:set var="section" value="${pageProperty(name:'meta.section')}"/>
+<g:set var="asbpHome" value="${grailsApplication.config.organisation.baseUrl}"/>
+<g:set var="userdetailsBaseUrl" value="${grailsApplication.config.userdetails.baseUrl}"/>
 <!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <alatag:addApplicationMetaTags/>
-    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1">
+<html dir="ltr" lang="en-US">
 
-    <asset:link rel="shortcut icon" href="favicon.ico" />
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="http://www.naa.gov.au/recordkeeping/gov_online/agls/1.1" rel="schema.AGLS" />
+        <alatag:addApplicationMetaTags/>
+        <meta name="DC.Title" content="Partners" lang="en" />	<meta name="DC.Function" content="Public information" />
+        <meta name="DC.Description" content="${orgNameLong} (${orgNameShort}) is an online resource that provides immediate access to the wealth of plant specimen information held by Australian herbaria. ${orgNameShort} is a collaborative project of the state, Commonwealth and territory herbaria, developed under the auspices of the Council of Heads of Australasian Herbaria (CHAH), representing the major Australian collections." />
+        <meta name="DC.Creator" content="jurisdiction:Australian Government Departmental Consortium;corporateName:Council of Heads of Australasian Herbaria" />
+        <meta name="DC.Publisher" content="jurisdiction:Australian Government Departmental Consortium;corporateName:Council of Heads of Australasian Herbaria" />
+        <meta name="DC.Type.Category" content="document" />
+        <meta name="DC.Format" content="text/html" />
+        <meta name="DC.Language" content="en_AU" scheme="RFC3066" />
+        <meta name="DC.Coverage.Jurisdiction" content="Australian Government Departmental Consortium" />
+        <meta name="DC.Coverage.PlaceName" content="Australia, world" />
+        <meta name="DC.Audience" content="Botanists, horticulturalists, biologists, ecologists, environmentalists, conservationists, land managers, educators, students, historians, general public" />
+        <meta name="DC.Availability" content="Freely available. Some parts of this resource are username and password restricted" />
+        <meta name="DC.Rights" content="(c) Council of Heads of Australasian Herbaria, 2010" />
+        <meta name="DC.Rights" content="Unless other stated, Intellectual Property associated with this resource resides with the Council of Heads of Australasian Herbaria and individual herbaria. Applications, source code and data are freely available for research, non-commercial and public good purposes" />
+        <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1">
+        <asset:link rel="shortcut icon" href="asbp/favicon.ico" />
+        <link rel='stylesheet' id='google_fonts-css'  href='//fonts.googleapis.com/css?family=Lato:300,400,700|Raleway:400,300,700' type='text/css' media='screen' />
+        <title><g:layoutTitle /></title>
 
-    <title><g:layoutTitle /></title>
-   %{-- <r:require modules="asbp" />--}%
-    <asset:javascript src="application.js"/>
-    <asset:stylesheet src="asbp_ala_seedhub.css"/>
-    <style type="text/css">
-        body {
-            background-color: #ffffff !important;
-        }
-        #breadcrumb {
-            margin-top: 10px;
-        }
-        #main-content #searchInfoRow #customiseFacetsButton > .dropdown-menu {
-            background-color: #ffffff;
-        }
-        #footer {
-            margin: 20px;
-            padding-top: 10px;
-            border-top: 1px solid #CCC;
-            font-size: 12px;
-        }
-        #content .nav-tabs > li.active > a {
-            background-color: #ffffff;
-        }
-        .nav {
-            margin-top: 20px;
-        }
-        body > #main-content {
-            margin-top: 0px;
-        }
-        #facetWell .sidebar h3 {
-            font-size: 20px;
-        }
-    </style>
-   %{-- <r:script disposition='head'>--}%
-   <asset:script type="text/javascript">
-        // initialise plugins
-        jQuery(function(){
-            // autocomplete on navbar search input
-            jQuery("form#search-form-2011 input#search-2011, form#search-inpage input#search, input#search-2013").autocomplete('https://bie.ala.org.au/search/auto.jsonp', {
-                extraParams: {limit: 100},
-                dataType: 'jsonp',
-                parse: function(data) {
-                    var rows = new Array();
-                    data = data.autoCompleteList;
-                    for(var i=0; i<data.length; i++) {
-                        rows[i] = {
-                            data:data[i],
-                            value: data[i].matchedNames[0],
-                            result: data[i].matchedNames[0]
-                        };
-                    }
-                    return rows;
-                },
-                matchSubset: false,
-                formatItem: function(row, i, n) {
-                    return row.matchedNames[0];
-                },
-                cacheLength: 10,
-                minChars: 3,
-                scroll: false,
-                max: 10,
-                selectFirst: false
-            });
+        <asset:javascript src="asbp.js"/>
+        <asset:javascript src="biocache-hubs.js" />
 
-            // Mobile/desktop toggle
-            // TODO: set a cookie so user's choice is remembered across pages
-            var responsiveCssFile = $("#responsiveCss").attr("href"); // remember set href
-            $(".toggleResponsive").click(function(e) {
-                e.preventDefault();
-                $(this).find("i").toggleClass("icon-resize-small icon-resize-full");
-                var currentHref = $("#responsiveCss").attr("href");
-                if (currentHref) {
-                    $("#responsiveCss").attr("href", ""); // set to desktop (fixed)
-                    $(this).find("span").html("Mobile");
-                } else {
-                    $("#responsiveCss").attr("href", responsiveCssFile); // set to mobile (responsive)
-                    $(this).find("span").html("Desktop");
-                }
-            });
+        <g:render template="/layouts/global" plugin="biocache-hubs"/>
 
-            $('.helphover').popover({animation: true, trigger:'hover'});
-        });
-   </asset:script>
-    %{--<r:layoutResources/>--}%
-    <g:layoutHead />
-</head>
-<body class="${pageProperty(name:'body.class')?:'nav-collections'}" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">
-<g:set var="fluidLayout" value="${grailsApplication.config.skin.fluidLayout?.toBoolean()}"/>
-<ala:systemMessage />
+        <asset:stylesheet src="third-party-styles.css"/>
 
-<div id="main_content" class="container">
-    <!--Header-->
-    <div id="header">
-        <a href="https://seedpartnership.org.au/" title="Home" rel="home" id="logo">
-            <img src="https://seedpartnership.org.au/sites/default/files/seedbank_logo_0.png" alt="Home" border="0"/>
-        </a>
-        <!--Menu-->
-        <div id="nice_menus-1">
-            <ul class="nice-menu">
-                <li class="active-trail"><a class="${(!section || section!='help')?'active':''}" href="${request.contextPath}/search">Search</a></li>
-                <li><a class="${(section=='help')?'active':''}" href="${request.contextPath}/help/help.html">Help</a></li>
-                <li class="hidden-phone"><a href="https://seedpartnership.org.au/about/aboutus" title="About Us">About Us</a></li>
-                <li class="hidden-phone"><a href="https://seedpartnership.org.au/initiatives">Initiatives</a></li>
-                <li class="hidden-phone"><a href="https://seedpartnership.org.au/partners" title="Partners and Associates">Partners and Associates</a></li>
-                <li class="hidden-phone"><a href="https://seedpartnership.org.au/contact" title="Contact">Contact</a></li>
-                <li><a href="https://seedpartnership.org.au/">ASBP Home</a></li>
-            </ul>
+        <g:layoutHead />
+
+        <asset:stylesheet src="asbp.css"/>
+
+    </head>
+    <body class="${pageProperty(name:'body.class')?:'nav-datasets'}" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">
+    <g:set var="fluidLayout" value="${pageProperty(name:'meta.fluidLayout')?:grailsApplication.config.skin?.fluidLayout}"/>
+    <g:set var="containerType" value="${fluidLayout ? 'container-fluid' : 'container'}"/>
+    <!-- Header -->
+    <!-- Navbar -->
+    <div id="asbp-nav" class="navbar navbar-default">
+        <div class="${containerType}">
+            <div class="navbar-inner">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" 
+                            data-toggle="collapse" data-target=".navbar-collapse" 
+                            aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="${asbpHome}"><i class="fa fa-home"></i></a></li>
+                        <li><a href="${serverName}/search/#tab_simpleSearch">Search</a></li>
+                        <li><a href="${asbpHome}/about/">About ${orgNameShort}</a></li>
+                        <li class="dropdown font-xsmall">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Help<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="${asbpHome}/using-asbp">Using ${orgNameShort}</a></li>
+                                <li><a href="${asbpHome}/data/">Data</a></li>
+                                <li><a href="${request.contextPath}/fields">Download fields</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="${asbpHome}/news">News</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a href="https://www.facebook.com/AustVirtHerb"><i class="fa fa-facebook-square"></i></a></li>
+                    </ul>
+                </div>
+            </div><!-- /.navbar-inner -->
+        </div><!-- .container -->
+    </div><!-- /.navbar -->
+
+    <div id="site-branding" class="site-branding">
+        <div class="${containerType}">
+            <div class="site-logo"><asset:image src="asbp/avh-logo-white-80.png" alt="" /></div>
+            <div class="site-header">
+                <h1 class="site-title"><a href="${asbpHome}" rel="home">${orgNameShort}</a></h1>
+                <h2 class="site-description">${orgNameLong}</h2>
+            </div>
+            <div class="span6 pull-right" id="rightMenu">
+                <%--<a href="http://www.ala.org.au/my-profile/"><div id='loginId'>Logged in as niels.klazenga@rbg.vic.gov.au</div></a>--%>
+                <g:set var="loginId"><alatag:loggedInUserDisplayname/></g:set>
+                <a href="${userdetailsBaseUrl}/my-profile/">${loginId}</a>
+                <g:if test="${loginId}">|</g:if>
+                <g:set var="returnUrlPath" value="${serverName}${request.requestURI}${request.queryString ? '?' : ''}${request.queryString}"/>
+                <auth:loginLogout logoutUrl="${request.contextPath}/logout/logout" returnUrlPath="${returnUrlPath}"/>
+                %{--<g:if test="${clubView}">--}%
+                %{--| <div id="clubView"><span>Club View</span></div>--}%
+                %{--</g:if>--}%
+            </div>
         </div>
-    </div><!--end Header-->
-    <div id="content">
+    </div><!-- .site-branding -->
+    <!-- End header -->
+
+    <div id="main-content" class="${containerType} content">
+        <plugin:isAvailable name="alaAdminPlugin">
+            <ala:systemMessage/>
+        </plugin:isAvailable>
         <g:layoutBody />
     </div>
 
-</div><!--end main_content-->
+    <!-- Footer -->
+    <footer id="colophon" class="site-footer" role="contentinfo">
+        <div class="${containerType}">
+            <div class="row">
+                <aside id="text-3" class="widget col-sm-6  clearfix widget_text powered-by">
+                    <div class="textwidget">
+                       %{-- <a href="http://ala.org.au/">
+                            <r:img dir="images" file="atlas-poweredby_rgb-lightbg.png" plugin="biocache-hubs" alt="Powered by ALA logo"/></a>--}%
+                        <a href="https://ala.org.au/"><asset:image src="ALA-powered-by-logo-inline.png" class="poweredByAlaLogo"></asset:image></a>
+                    </div>
+                </aside>
+                <aside id="text-2" class="widget col-sm-6  clearfix widget_text contact-us">
+                    <div class="textwidget">
+                        <a href="${asbpHome}/contact-us">Contact us</a>
+                    </div>
+                </aside>
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </footer><!-- #colophon -->
+    <!-- End footer -->
 
-<!--Footer-->
-<div class="footer container">
-    <div style="background: url(https://seedpartnership.org.au/sites/all/themes/seedbank/images/footer_slogan.gif) no-repeat right bottom; height: 42px; vertical-align: top"></div>
-    <div style="font-size: 0.75em; float:left;">Copyright &copy; 2012 Council of Heads of Australian Botanic Gardens Inc. (CHABG)</div>
-    <div style="font-size: 0.75em; text-align:right;"><a href="https://seedpartnership.org.au/privacy">Privacy &amp; Disclaimer</a></div>
-    <div style="float: right;"><a href="https://www.ala.org.au/" target="_black"><asset:image src="atlas-poweredby_rgb-lightbg.png" alt="" border="0"/></a></div>
-</div>
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-4355440-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 
-<script type="text/javascript">
-    document.write(unescape("%3Cscript src='https://ssl.google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-    var pageTracker = _gat._getTracker("UA-4355440-1");
-    pageTracker._initData();
-    pageTracker._trackPageview();
-</script>
-
-<!-- JS resources-->
-<asset:deferredScripts/>
-</body>
+    <asset:deferredScripts />
+    </body>
 </html>
