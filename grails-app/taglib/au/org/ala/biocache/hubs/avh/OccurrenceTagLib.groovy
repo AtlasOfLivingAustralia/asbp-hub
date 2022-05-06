@@ -1,4 +1,4 @@
-package au.org.ala.biocache.hubs.avh
+package au.org.ala.biocache.hubs.asbp
 
 import groovy.xml.MarkupBuilder
 //import org.codehaus.groovy.grails.web.json.JSONObject

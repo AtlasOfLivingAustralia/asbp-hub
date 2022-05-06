@@ -1,4 +1,4 @@
-package au.org.ala.biocache.hubs.avh
+package au.org.ala.biocache.hubs.asbp
 
 class UrlMappings {
 
