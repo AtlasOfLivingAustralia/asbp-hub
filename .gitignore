@@ -5,3 +5,4 @@ target/*
 .gradle
 build
 .slcache
+.DS_STORE
