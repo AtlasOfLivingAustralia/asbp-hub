@@ -6,3 +6,4 @@ target/*
 build
 .slcache
 .DS_STORE
+.DS_Store

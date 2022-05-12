@@ -112,7 +112,7 @@ bie:
 biocache:
   baseUrl: "https://biocache-ws.ala.org.au/ws"
   apiKey: "not-your-api-key-to-use"
-  queryContext: "data_hub_uid:dh2" # data hub uid
+  queryContext: "data_hub_uid:dh4" # data hub uid
   groupedFacetsUrl: "file:///data/asbp-hub/config/grouped_facets_asbp.json"
 
 spatial:
