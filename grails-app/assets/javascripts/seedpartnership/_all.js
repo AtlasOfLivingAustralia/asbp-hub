@@ -1,6 +1,4 @@
 
-//= require jquery.min.js
-//= require jquery-migrate.min.js
 //= require jquery.smartmenus.min.js
 //= require webpack-pro.runtime.min.js
 //= require webpack.runtime.min.js

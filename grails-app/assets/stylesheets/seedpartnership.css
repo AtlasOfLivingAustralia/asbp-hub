@@ -10,4 +10,5 @@
 *= require seedpartnership/elementor-style.css
 *= require seedpartnership/fontawesome.min.css
 *= require seedpartnership/animations.min.css
+*= require seedpartnership/wp-custom.css
 */

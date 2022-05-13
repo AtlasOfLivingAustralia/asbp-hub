@@ -1,8 +1,8 @@
 /*! elementor-icons - v5.15.0 - 30-01-2022 */
 @font-face{
     font-family:eicons;
-    src:url(./webfonts/eicons.eot);
-    src:url(./webfonts/eicons.eot#iefix) format("embedded-opentype"),url(./webfonts/eicons.woff2) format("woff2"),url(./webfonts/eicons.woff) format("woff"),url(./webfonts/eicons.ttf) format("truetype"),url(./webfonts/eicons.svg#eicon) format("svg");
+    src:url(./eicons.eot);
+    src:url(./eicons.eot#iefix) format("embedded-opentype"),url(./eicons.woff2) format("woff2"),url(./eicons.woff) format("woff"),url(./eicons.ttf) format("truetype"),url(./eicons.svg#eicon) format("svg");
     font-weight:400;
     font-style:normal
 }

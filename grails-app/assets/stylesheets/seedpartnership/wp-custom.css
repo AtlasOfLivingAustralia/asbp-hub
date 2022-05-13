@@ -1,0 +1,72 @@
+/* SH Paypal button border */
+.paypal-button input {
+    border: solid 1px var( --e-global-color-868b7b4 ) !important;
+}
+
+/* SH Fix elementor bugs */
+.elementor-widget-heading .elementor-heading-title>a {
+    color: #25836c;
+}
+.elementor-widget-heading .elementor-heading-title {
+    line-height: 1.5;
+}
+
+/* SH Remove bottom margin from breadcrumbs */
+p#breadcrumbs {
+    margin-bottom: 0px;
+}
+
+/* SH Image boxes with round images */
+.round-image-box img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+/* BD password protected site edits */
+.post-password-form{
+    padding: 100px;
+    height: 100vh;
+}
+
+/* BD password protected site edits */
+.post-password-form p:first-child {
+    visibility: hidden;
+}
+.post-password-form p:first-child:before {
+    content: "[insert customisable text here]";
+    visibility: visible;
+}
+
+/* SH Font smoothing formatting */
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* SH Icon formatting */
+.elementor-icon {
+    color: #2d2d2d;
+    font-size: 25px;
+}
+.elementor-icon:hover {
+    color: #2d2d2d;
+}
+
+/* SH Remove margin from last paragraph */
+.elementor-text-editor p:last-child {
+    margin-bottom: 0px;
+}
+
+/* SH Adjust form label margin */
+.elementor-field-label {
+    margin-bottom: 5px;
+}
+
+/* SH Increase form field margin */
+.elementor-field-group {
+    margin-bottom: 20px !important;
+}
+
+/* SH Adds padding above post archive pagination numbers */
+.elementor-pagination {
+    padding-top: 50px;
+}

@@ -68,7 +68,7 @@
         <g:layoutHead />
 
     </head>
-    <body class="${pageProperty(name:'body.class')?:'nav-datasets'}" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">
+    <body class="${pageProperty(name:'body.class')?:'nav-datasets'} elementor-kit-829" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">
     <g:set var="fluidLayout" value="${pageProperty(name:'meta.fluidLayout')?:grailsApplication.config.skin?.fluidLayout}"/>
     <g:set var="containerType" value="${fluidLayout ? 'container-fluid' : 'container'}"/>
     <!-- Header -->
@@ -171,7 +171,19 @@
         ga('send', 'pageview');
     </script>
 
-    <asset:javascript src="_all.js"/>
+    <asset:stylesheet href="seedpartnership/animations.min.css" />
+    <asset:javascript src="seedpartnership/jquery.smartmenus.min.js"/>
+    <asset:javascript src="seedpartnership/webpack-pro.runtime.min.js"/>
+    <asset:javascript src="seedpartnership/webpack.runtime.min.js" />
+    <asset:javascript src="seedpartnership/frontend-modules.min.js"/>
+    <asset:javascript src="seedpartnership/hooks.min.js"/>
+    <asset:javascript src="seedpartnership/i18n.min.js"/>
+    <asset:javascript src="seedpartnership/elementor-pro-config.js"/>
+    <asset:javascript src="seedpartnership/frontend.pro.min.js"/>
+    <asset:javascript src="seedpartnership/elementor-config.js"/>
+    <asset:javascript src="seedpartnership/frontend.min.js"/>
+    <asset:javascript src="seedpartnership/preloaded-elements-handlers.min.js"/>
+
     <asset:deferredScripts />
     </body>
 </html>
