@@ -172,17 +172,7 @@
     </script>
 
     <asset:stylesheet href="seedpartnership/animations.min.css" />
-    <asset:javascript src="seedpartnership/jquery.smartmenus.min.js"/>
-    <asset:javascript src="seedpartnership/webpack-pro.runtime.min.js"/>
-    <asset:javascript src="seedpartnership/webpack.runtime.min.js" />
-    <asset:javascript src="seedpartnership/frontend-modules.min.js"/>
-    <asset:javascript src="seedpartnership/hooks.min.js"/>
-    <asset:javascript src="seedpartnership/i18n.min.js"/>
-    <asset:javascript src="seedpartnership/elementor-pro-config.js"/>
-    <asset:javascript src="seedpartnership/frontend.pro.min.js"/>
-    <asset:javascript src="seedpartnership/elementor-config.js"/>
-    <asset:javascript src="seedpartnership/frontend.min.js"/>
-    <asset:javascript src="seedpartnership/preloaded-elements-handlers.min.js"/>
+    <asset:javascript src="seedpartnership/_all.js"/>
 
     <asset:deferredScripts />
     </body>
