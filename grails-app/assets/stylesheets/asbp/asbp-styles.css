@@ -53,7 +53,7 @@ a.newDownload {
 }
 
 a:hover, a:focus, .btn-link:focus, .btn-link:hover {
-    color: #8e8ed4; /* Light Purple */
+    color: #31435E;
 }
 
 /*.btn-default {
@@ -259,21 +259,7 @@ body #main-content #customiseFacetsButton > .dropdown-menu, #main-content #resul
 
 .btn-primary {
     color: #ffffff !important;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     background-color: #8080c4;
-    background-image: -moz-linear-gradient(top, #8080c4, #5C5CAD);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#8080c4), to(#5C5CAD));
-    background-image: -webkit-linear-gradient(top, #8080c4, #5C5CAD);
-    background-image: -o-linear-gradient(top, #8080c4, #5C5CAD);
-    background-image: linear-gradient(to bottom, #8080c4, #5C5CAD) !important;
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff007fb6', endColorstr='#ff0042b6', GradientType=0);
-    border-color: #5C5CAD #5C5CAD #406e11;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    background-color: #8080c4;
-    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-primary:hover,
 .btn-primary:focus,
