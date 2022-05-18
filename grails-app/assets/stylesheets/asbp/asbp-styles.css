@@ -264,20 +264,6 @@ td.labels {
     width: 170px;
 }
 
-
-
-
-
-#advancedSearch {
-    display: none;
-    margin-top: 5px;
-    padding: 5px;
-    border: 2px solid #CCC;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    border-radius: 5px;
-}
 input.taxaLookup {
     float: right;
     margin-right: 10px;
@@ -412,10 +398,6 @@ border-radius: 5px;
 width: 95%;
 }*/
 
-#advancedSearchForm select {
-    width: 300px;
-}
-
 .sidebar h3 {
     font-size: 16px;
 }
@@ -515,26 +497,6 @@ text-align:left; padding-bottom:15px;
 }
 #breadcrumb ul, #breadcrumb ol  {
 margin-bottom: 2px;
-}
-
-#advancedSearchForm table {
-    width: 100%;
-}
-
-#advancedSearchForm td {
-    vertical-align: middle;
-}
-
-#advancedSearchForm input, #advancedSearchForm select, #advancedSearchForm  textarea, #simpleSearchForm input {
-    margin-bottom: 0;
-}
-
-#advancedSearchForm input[type=text] {
-    width: 35%;
-}
-
-#advancedSearchForm input.occurrence_date {
-    width: 15%;
 }
 
 .tooltip {
