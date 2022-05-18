@@ -618,3 +618,14 @@ margin-bottom: 2px;
 #download-button-area {
     padding-right: 0px !important;
 }
+
+#searchControls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sortWidgets {
+    padding-top: 0px !important;
+    height: 100%;
+}
