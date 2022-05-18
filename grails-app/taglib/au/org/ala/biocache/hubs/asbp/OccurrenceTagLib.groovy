@@ -75,7 +75,7 @@ class OccurrenceTagLib {
                     }
                 }
                 tr() {
-                    outputResultsTd("Herbarium: ", occurrence.collectionName, occurrence.collectionName)
+                    outputResultsTd("Seedbank: ", occurrence.collectionName, occurrence.collectionName)
                     outputResultsTd("Data&nbsp;Resource: ", occurrence.dataResourceName, !occurrence.collectionName && occurrence.dataResourceName)
                     td(colspan: '2', style: 'text-align: right;') {
                         a(

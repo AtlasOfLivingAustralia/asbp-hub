@@ -35,8 +35,11 @@
         <link href="http://www.naa.gov.au/recordkeeping/gov_online/agls/1.1" rel="schema.AGLS" />
         <alatag:addApplicationMetaTags/>
         <meta name="DC.Title" content="Partners" lang="en" />	<meta name="DC.Function" content="Public information" />
-        <meta name="DC.Description" content="${orgNameLong} (${orgNameShort}) is an online resource that provides immediate access to the wealth of plant specimen information held by Australian herbaria. ${orgNameShort} is a collaborative project of the state, Commonwealth and territory herbaria, developed under the auspices of the Council of Heads of Australasian Herbaria (CHAH), representing the major Australian collections." />
+        <!-- UPDATE BELOW -->
+        <meta name="DC.Description" content="${orgNameLong} (${orgNameShort}) is an online resource that provides immediate access to the wealth of plant specimen information held by Australian Seedbanks. ${orgNameShort} is a collaborative project of the state, Commonwealth and territory seedbanks, developed under the auspices of the Council of Heads of Australasian Herbaria (CHAH), representing the major Australian collections." />
+        <!-- UPDATE BELOW -->
         <meta name="DC.Creator" content="jurisdiction:Australian Government Departmental Consortium;corporateName:Council of Heads of Australasian Herbaria" />
+        <!-- UPDATE BELOW -->
         <meta name="DC.Publisher" content="jurisdiction:Australian Government Departmental Consortium;corporateName:Council of Heads of Australasian Herbaria" />
         <meta name="DC.Type.Category" content="document" />
         <meta name="DC.Format" content="text/html" />
@@ -45,6 +48,7 @@
         <meta name="DC.Coverage.PlaceName" content="Australia, world" />
         <meta name="DC.Audience" content="Botanists, horticulturalists, biologists, ecologists, environmentalists, conservationists, land managers, educators, students, historians, general public" />
         <meta name="DC.Availability" content="Freely available. Some parts of this resource are username and password restricted" />
+        <!-- UPDATE BELOW -->
         <meta name="DC.Rights" content="(c) Council of Heads of Australasian Herbaria, 2010" />
         <meta name="DC.Rights" content="Unless other stated, Intellectual Property associated with this resource resides with the Council of Heads of Australasian Herbaria and individual herbaria. Applications, source code and data are freely available for research, non-commercial and public good purposes" />
         <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1">

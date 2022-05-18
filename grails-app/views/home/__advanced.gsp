@@ -105,10 +105,10 @@
                 <thead/>
                 <tbody>
                     <tr>
-                        <td class="labels">Herbarium</td>
+                        <td class="labels">Seedbank</td>
                         <td>
                             <select class="institution_uid collection_uid" name="institution_collection" id="institution_collection">
-                                <option value="">-- select an herbarium --</option>
+                                <option value="">-- select a seedbank --</option>
                                 <g:each var="inst" in="${request.getAttribute("collection_uid")}">
                                     <!--<optgroup label="${inst.value}"> -->
                                     <g:if test="${inst.value}">
