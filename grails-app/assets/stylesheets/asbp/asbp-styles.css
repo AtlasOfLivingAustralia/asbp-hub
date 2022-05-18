@@ -28,7 +28,6 @@
 #headingBar h1 {
     margin-bottom: 32px !important;
     font-size: 26px;
-    font-family: "Abel", Arial, "Helvetica Neue", sans-serif !important;
 }
 
 body {
@@ -41,7 +40,7 @@ body h1, body h2, body h3, body h4, body h5 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+    font-family: "Abel", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
 
 a.newDownload {
@@ -52,10 +51,9 @@ a:hover, a:focus, .btn-link:focus, .btn-link:hover {
     color: #3F9D87
 }
 
-/*.btn-default {
-    text-shadow: 0 1px 0 #fff;
-    background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
-}*/
+.btn-default {
+    border: 1px solid black;
+}
 
 *::before, *::after {
     -webkit-box-sizing: border-box;
@@ -423,6 +421,10 @@ width: 95%;
     font-size: 16px;
 }
 
+#listHeader {
+    padding-bottom: 12px !important;
+}
+
 #listHeader h1 {
     font-size: 26px;
 }
@@ -457,6 +459,16 @@ abbr {
 #content #facetWell {
     background-color: #F0F0E8;
     background-image: none;
+}
+
+#content .nav-tabs li a {
+    border-radius: 0;
+    border-bottom-width: 3px !important;
+}
+
+#content .nav-tabs li.active a {
+    border-radius: 0;
+    border-bottom: 3px solid #25836D !important;
 }
 
 #content .nav-tabs li:not(.active) a {
@@ -542,4 +554,13 @@ margin-bottom: 2px;
     color: inherit;
     font-style: normal;
     font-weight: bold;
+}
+
+/* Miscellaneous styling fixes */
+.DQPrefSettingsLink {
+    padding: 8px 16px;
+}
+
+#advancedSearchLink {
+    padding-bottom: 12px !important;
 }
