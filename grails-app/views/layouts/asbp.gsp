@@ -113,24 +113,12 @@
     <!-- End Nav -->
 
     <div id="site-branding" class="site-branding">
-        <div class="${containerType}">
-            <div class="site-logo"><asset:image src="asbp/avh-logo-white-80.png" alt="" /></div>
-            <div class="site-header">
-                <h1 class="site-title"><a href="${asbpHome}" rel="home">${orgNameShort}</a></h1>
-                <h2 class="site-description">${orgNameLong}</h2>
-            </div>
-            <div class="span6 pull-right" id="rightMenu">
-                <%--<a href="http://www.ala.org.au/my-profile/"><div id='loginId'>Logged in as niels.klazenga@rbg.vic.gov.au</div></a>--%>
-                <g:set var="loginId"><alatag:loggedInUserDisplayname/></g:set>
-                <a href="${userdetailsBaseUrl}/my-profile/">${loginId}</a>
-                <g:if test="${loginId}">|</g:if>
-                <g:set var="returnUrlPath" value="${serverName}${request.requestURI}${request.queryString ? '?' : ''}${request.queryString}"/>
-                <auth:loginLogout logoutUrl="${request.contextPath}/logout/logout" returnUrlPath="${returnUrlPath}"/>
-                %{--<g:if test="${clubView}">--}%
-                %{--| <div id="clubView"><span>Club View</span></div>--}%
-                %{--</g:if>--}%
-            </div>
-        </div>
+        <g:set var="loginId"><alatag:loggedInUserDisplayname/></g:set>
+        <div><i class="fas fa-user fa-lg"></i></div>
+        <a href="${userdetailsBaseUrl}/my-profile/">${loginId}</a>
+        <g:if test="${loginId}">|</g:if>
+        <g:set var="returnUrlPath" value="${serverName}${request.requestURI}${request.queryString ? '?' : ''}${request.queryString}"/>
+        <auth:loginLogout logoutUrl="${request.contextPath}/logout/logout" returnUrlPath="${returnUrlPath}"/>
     </div><!-- .site-branding -->
     <!-- End header -->
 

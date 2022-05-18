@@ -26,10 +26,9 @@
 }
 
 #headingBar h1 {
-    margin-bottom: 26px !important;
-    font-size: 26px !important;
-    color: #5f5d60 !important;
-    font-family: "Raleway", Arial, "Helvetica Neue", sans-serif !important;
+    margin-bottom: 32px !important;
+    font-size: 26px;
+    font-family: "Abel", Arial, "Helvetica Neue", sans-serif !important;
 }
 
 body {
@@ -148,70 +147,15 @@ a:hover, a:focus, .btn-link:focus, .btn-link:hover {
 /* Site branding
 --------------------------------*/
 .site-branding {
-    background-color: #FF9933;
+    display: flex;
+    padding: 24px;
+    background-color: #25836C;
     margin-bottom: 16px;
+    justify-content: space-between;
 }
 
-.site-logo {
-    float: left;
-    padding: 30px 15px 15px 0;
-}
-
-.site-logo img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: -5px;
-}
-
-@media (min-width: 600px) {
-    .site-logo {
-        padding-right: 25px;
-    }
-
-    .site-logo img {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 0;
-    }
-}
-
-.site-header {
-    float: left;
-}
-
-#site-branding .site-title {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 60px;
-    font-weight: 300;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    margin-top: 20px;
-}
-
-#site-branding .site-title a, #site-branding .site-description {
-    color: #fff !important;
-}
-
-.site-description {
-    margin-top: 0;
-    margin-bottom: 25px;
-    line-height: 1.1;
-    font-size: 22.75px;
-}
-
-#site-branding a:hover {
-    text-decoration: none;
-}
-
-div#rightMenu, #rightMenu a {
-    color: #fff !important;
-}
-
-@media (min-width: 768px) {
-    div#rightMenu {
-        margin-top: 115px;
-        text-align: right;
-    }
+.site-branding a, span, i {
+    color: white;
 }
 
 /* footer
