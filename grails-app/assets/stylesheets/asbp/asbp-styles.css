@@ -69,10 +69,13 @@ a:hover, a:focus, .btn-link:focus, .btn-link:hover {
 --------------------------------*/
 .site-branding {
     display: flex;
-    padding: 24px;
+    padding: 18px;
     background-color: #25836C;
     margin-bottom: 16px;
-    justify-content: space-between;
+}
+
+.site-branding i {
+    margin-right: 14px;
 }
 
 .site-branding a, .site-branding span, .site-branding i {
