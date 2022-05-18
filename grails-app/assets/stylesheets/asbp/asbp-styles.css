@@ -544,7 +544,53 @@ margin-bottom: 2px;
     max-width: none;
 }
 
+/* Override the pagination styles */
+.pagination {
+    margin-top: 48px !important;
+}
+
+.pagination a {
+    background-color: white !important;
+}
+
+.pagination a,
+.pagination span {
+    background-image: none !important;
+    box-shadow: none !important;
+    padding: 2px 8px !important;
+    font-size: 16px !important;
+    border: none !important;
+    background-color: white !important;
+    text-shadow: none;
+}
+
+.pagination a:hover,
+.pagination span:not(.currentStep):hover {
+    background-color: #ccc !important;
+}
+
+.pagination a,
+.pagination span:not(.currentStep) {
+    color: #666 !important;
+}
+
+.pagination .currentStep {
+    background-color: #25836D !important;
+    opacity: 1 !important;
+}
+
 /* Override the biocache-hubs jQuery.hover styling */
+#results {
+    padding-right: 0 !important;
+    padding-top: 15px !important;
+}
+
+#results .recordRow {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    padding: 15px;
+}
+
 #results .recordRow:hover {
     background-color: rgba(255, 254, 247, 0.7) !important;
 }
