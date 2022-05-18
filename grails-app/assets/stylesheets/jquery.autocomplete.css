@@ -56,3 +56,14 @@ li.ac_over {
 }
 .ac_results li strong { color:#3a5c83;}
 .ac_results li.ac_over strong { color:#fff;}
+
+/* Autocomplete styling fixed */
+.ui-menu-item {
+	font-family: 'Roboto Condensed', sans-serif !important;
+	font-size: 16px !important;
+	font-weight: 400 !important;
+}
+
+.ui-menu-item:hover {
+	background: #31435E !important;
+}

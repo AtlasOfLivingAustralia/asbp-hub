@@ -22,7 +22,7 @@
     --e-global-typography-bf9eb53-letter-spacing: 0px;
     word-spacing: 0em;
     color: #595959;
-    font-family: "Roboto Condensed", Sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-size: 16px;
     font-weight: 400;
     text-transform: none;
@@ -42,7 +42,7 @@
 }
 
 .elementor-kit-829 input:not([type="button"]):not([type="submit"]),.elementor-kit-829 textarea,.elementor-kit-829 .elementor-field-textual {
-    font-family: "Roboto Condensed", Sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5em;
