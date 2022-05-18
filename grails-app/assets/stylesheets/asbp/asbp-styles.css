@@ -154,7 +154,7 @@ a:hover, a:focus, .btn-link:focus, .btn-link:hover {
     justify-content: space-between;
 }
 
-.site-branding a, span, i {
+.site-branding a, .site-branding span, .site-branding i {
     color: white;
 }
 
