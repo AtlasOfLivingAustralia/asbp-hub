@@ -20,24 +20,6 @@ li,ul{color:#637073;font-size:14px;font-weight:200;line-height:1.6em;}
 p{font-size: 14px;line-height: 1.6em;}
 strong{color:#5f5d60;}
 
-/* ALA Header
-================================= */
-
-.nav-tabs > li > a { background-color: #f2f2f2; }
-.nav-tabs > .active > a,
-.nav-tabs > .active > a:hover,
-.nav-tabs > .active > a:focus { background-color: white; }
-
-
-.navbar .navbar-inner {min-height: 50px;}
-.navbar-inner  img.brand {max-height: 20px;margin-top: 2px;}
-.navbar-inner ul.nav > li > a,.navbar-inner  a.brand {padding: 15px 10px;line-height: 20px;text-shadow: none;}
-.navbar-inner  ul.dropdown-menu li a {padding: 3px 20px;}
-.navbar-inner form {margin: 0; position: relative; left: 0; display: block; float: left;}
-.navbar-inner form input {width: 172px;}
-.navbar-inner form input, .navbar form .btn {margin-top: 10px;}
-.navbar .btn-navbar {margin: 8px 15px;padding: 9px 10px;}
-
 /* Scaffold
 ================================= */
 
@@ -49,7 +31,7 @@ strong{color:#5f5d60;}
 .ftr-primary{margin-top: 50px;}
 .ftr-secondary,.ftr-social{margin-top: 1em;margin-bottom: 4em;}
 /*footer p.lead{color:#C44D34;}*/
-footer p{font-size: 14px;line-height: 1.6em;}
+footer p { font-size: 14px; line-height: 1.6em; }
 .ftr-social{margin-bottom:20px;}
 .ftr-social > div{padding:2em 0;}
 ul.footer-nav.list-inline{padding-top:2px;}
