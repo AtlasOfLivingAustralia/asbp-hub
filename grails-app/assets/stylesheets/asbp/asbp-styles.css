@@ -51,9 +51,7 @@ a:hover, a:focus, .btn-link:focus, .btn-link:hover {
     color: #3F9D87
 }
 
-.btn-default {
-    border: 1px solid black;
-}
+.btn-default {}
 
 *::before, *::after {
     -webkit-box-sizing: border-box;
@@ -84,6 +82,7 @@ a:hover, a:focus, .btn-link:focus, .btn-link:hover {
 /* footer
 --------------------------*/
 footer {
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
@@ -442,9 +441,9 @@ abbr {
 
 .tab-content {
     padding: 15px;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd !important;
+    border-right: 1px solid #ddd !important;
+    border-left: 1px solid #ddd !important;
 }
 
 #content ul.nav-tabs {
@@ -463,7 +462,6 @@ abbr {
 
 #content .nav-tabs li a {
     border-radius: 0;
-    border-bottom-width: 3px !important;
 }
 
 #content .nav-tabs li.active a {
@@ -474,6 +472,7 @@ abbr {
 #content .nav-tabs li:not(.active) a {
     background-color: #fffef7;
     border: 1px solid #ddd;
+    padding-bottom: 12px;
 }
 
 .tab-content {
@@ -563,4 +562,13 @@ margin-bottom: 2px;
 
 #advancedSearchLink {
     padding-bottom: 12px !important;
+}
+
+#clearAll {
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+#download-button-area {
+    padding-right: 0px !important;
 }

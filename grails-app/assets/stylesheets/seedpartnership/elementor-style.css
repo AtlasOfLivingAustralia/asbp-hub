@@ -96,12 +96,6 @@ button:hover {
 	background-color: inherit;
 }
 
-/* SC Remove default formatting from buttons and search */
-[type=button],
-[type=submit],
-button {
-	border: none;
-}
 [type=search] {
 	margin-bottom: 20px;
 }

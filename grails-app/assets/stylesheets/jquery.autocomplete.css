@@ -32,7 +32,6 @@
 	/*width: 100%;font: menu;*/
 	
 	font-size: 14px;
-	font-family: "Roboto Condensed", Sans-serif !important;
 	/* 
 	it is very important, if line-height not setted or setted 
 	in relative units scroll will be broken in firefox
