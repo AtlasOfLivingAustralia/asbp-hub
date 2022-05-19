@@ -617,3 +617,20 @@ div#download {
     padding-top: 0px !important;
     height: 100%;
 }
+
+#importAreaPanel .panel-default {
+    border: none;
+}
+
+#importAreaPanel .panel-heading {
+    border-radius: 6px;
+    background-color: #31435E;
+}
+
+#importAreaPanel .panel-heading a {
+    color: white;
+}
+
+#importAreaPanel .panel-heading a:hover {
+    opacity: 0.6;
+}
