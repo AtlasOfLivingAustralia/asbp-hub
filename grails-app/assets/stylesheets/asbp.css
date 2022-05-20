@@ -580,7 +580,7 @@ div#download {
 }
 
 #results .recordRow:hover {
-    background-color: rgba(255, 254, 247, 0.7) !important;
+    background-color: #E9ECEF !important;
 }
 
 #excluded .exclude-count-label {
