@@ -75,43 +75,7 @@
     <body class="${pageProperty(name:'body.class')?:'nav-datasets'} elementor-kit-829" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">
     <g:set var="fluidLayout" value="${pageProperty(name:'meta.fluidLayout')?:grailsApplication.config.skin?.fluidLayout}"/>
     <g:set var="containerType" value="${fluidLayout ? 'container-fluid' : 'container'}"/>
-    <!-- Header -->
-%{--    <!-- Navbar -->--}%
-%{--    <div id="asbp-nav" class="navbar navbar-default">--}%
-%{--        <div class="${containerType}">--}%
-%{--            <div class="navbar-inner">--}%
-%{--                <div class="navbar-header">--}%
-%{--                    <button type="button" class="navbar-toggle collapsed" --}%
-%{--                            data-toggle="collapse" data-target=".navbar-collapse" --}%
-%{--                            aria-expanded="false">--}%
-%{--                        <span class="sr-only">Toggle navigation</span>--}%
-%{--                        <span class="icon-bar"></span>--}%
-%{--                        <span class="icon-bar"></span>--}%
-%{--                        <span class="icon-bar"></span>--}%
-%{--                    </button>--}%
-%{--                </div>--}%
-%{--                <div class="collapse navbar-collapse">--}%
-%{--                    <ul class="nav navbar-nav">--}%
-%{--                        <li><a href="${asbpHome}"><i class="fa fa-home"></i></a></li>--}%
-%{--                        <li><a href="${serverName}/search/#tab_simpleSearch">Search</a></li>--}%
-%{--                        <li><a href="${asbpHome}/about/">About ${orgNameShort}</a></li>--}%
-%{--                        <li class="dropdown font-xsmall">--}%
-%{--                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Help<span class="caret"></span></a>--}%
-%{--                            <ul class="dropdown-menu" role="menu">--}%
-%{--                                <li><a href="${asbpHome}/using-asbp">Using ${orgNameShort}</a></li>--}%
-%{--                                <li><a href="${asbpHome}/data/">Data</a></li>--}%
-%{--                                <li><a href="${request.contextPath}/fields">Download fields</a></li>--}%
-%{--                            </ul>--}%
-%{--                        </li>--}%
-%{--                        <li><a href="${asbpHome}/news">News</a></li>--}%
-%{--                    </ul>--}%
-%{--                    <ul class="nav navbar-nav pull-right">--}%
-%{--                        <li><a href="https://www.facebook.com/AustVirtHerb"><i class="fa fa-facebook-square"></i></a></li>--}%
-%{--                    </ul>--}%
-%{--                </div>--}%
-%{--            </div><!-- /.navbar-inner -->--}%
-%{--        </div><!-- .container -->--}%
-%{--    </div><!-- /.navbar -->--}%
+
     <!-- Start Nav !-->
     <g:render template="/layouts/nav" />
     <!-- End Nav -->

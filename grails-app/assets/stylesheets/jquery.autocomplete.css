@@ -32,7 +32,7 @@
 	/*width: 100%;font: menu;*/
 	
 	font-size: 14px;
-	/* 
+	/* op
 	it is very important, if line-height not setted or setted 
 	in relative units scroll will be broken in firefox
 	*/
@@ -62,8 +62,4 @@ li.ac_over {
 	font-family: 'Roboto Condensed', sans-serif !important;
 	font-size: 16px !important;
 	font-weight: 400 !important;
-}
-
-.ui-menu-item:hover {
-	background: #31435E !important;
 }
