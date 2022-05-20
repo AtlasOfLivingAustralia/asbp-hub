@@ -403,16 +403,6 @@ table#taxonomyOptions {
     margin-bottom: 0;
 }
 
-/*#taxonSearchDiv {
-border-bottom: 1px solid #DDD;
-border: 1px solid #AAA !important;
--moz-border-radius: 5px;
--webkit-border-radius: 5px;
--khtml-border-radius: 5px;
-border-radius: 5px;
-width: 95%;
-}*/
-
 .sidebar h3 {
     font-size: 16px;
 }
@@ -568,6 +558,7 @@ div#download {
 }
 
 /* Override the biocache-hubs jQuery.hover styling */
+
 #results {
     padding-right: 0 !important;
     padding-top: 15px !important;
@@ -589,7 +580,10 @@ div#download {
     font-weight: bold;
 }
 
-/* Miscellaneous styling fixes */
+/* Miscellaneous styling fixes
+---------------------------*/
+
+/* The settings button on the search results page */
 .DQPrefSettingsLink {
     padding: 8px 16px;
 }
@@ -598,6 +592,7 @@ div#download {
     padding-bottom: 12px !important;
 }
 
+/* Advanced search clear all button */
 #clearAll {
     font-size: 14px;
     border-radius: 4px;
@@ -618,6 +613,7 @@ div#download {
     height: 100%;
 }
 
+/* Spatial search tab */
 #importAreaPanel .panel-default {
     border: none;
 }
