@@ -27,7 +27,7 @@ info:
     name: '@info.app.name@'
     version: '@info.app.version@'
     grailsVersion: '@info.app.grailsVersion@'
-    description: 'The Australian Seedbank Partnetship'
+    description: 'The Australian Seedbank Partnership'
 spring:
   main:
     banner-mode: "off"
