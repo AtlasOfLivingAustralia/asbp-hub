@@ -6,6 +6,7 @@ branches:
   only:
   - master
   - grails3
+  - tech-stack-upgrade
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
