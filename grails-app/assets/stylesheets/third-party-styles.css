@@ -16,3 +16,15 @@
 *= require jquery.autocomplete.css
 *= require bootstrap/css/bootstrap.css
 */
+
+.btn-success {
+    color: #fff !important;
+    background-color: #25836C;
+    border: none;
+}
+
+.btn-success:hover {
+    color: #fff !important;
+    background-color: #25836C !important;
+    border: none;
+}
