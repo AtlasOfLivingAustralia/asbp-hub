@@ -9,6 +9,3 @@
 //= require frontend.pro.min.js
 //= require elementor-config.js
 //= require frontend.min.js
-//= require preloaded-elements-handlers.min.js
-
-console.log('All Seedpartnership JS loaded.');

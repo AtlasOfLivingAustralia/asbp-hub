@@ -133,6 +133,9 @@
     <asset:stylesheet href="seedpartnership/animations.min.css" />
     <asset:javascript src="seedpartnership/seedpartnership.js"/>
 
+    <!-- Temporary fix - this file will not minimise during build, causing a compilation failure -->
+    <script type="text/javascript" src="https://www.seedpartnership.org.au/wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js?ver=3.7.1"></script>
+
     <asset:deferredScripts />
     </body>
 </html>
