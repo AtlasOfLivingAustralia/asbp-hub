@@ -91,8 +91,14 @@ a:hover, a:focus, .btn-link:focus, .btn-link:hover {
     margin-right: 14px;
 }
 
-.site-branding a, .site-branding span, .site-branding i {
+.site-branding a, .site-branding i {
     color: white;
+}
+
+.site-branding span.auth-divider {
+    color: #ddd;
+    margin: 0px 6px;
+    cursor: default;
 }
 
 /* footer

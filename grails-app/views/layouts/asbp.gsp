@@ -84,7 +84,7 @@
         <g:set var="loginId"><alatag:loggedInUserDisplayname/></g:set>
         <div><i class="fas fa-user fa-lg"></i></div>
         <a href="${userdetailsBaseUrl}/my-profile/">${loginId}</a>
-        <g:if test="${loginId}">|</g:if>
+        <g:if test="${loginId}"><span class="auth-divider">|</span></g:if>
         <g:set var="returnUrlPath" value="${serverName}${request.requestURI}${request.queryString ? '?' : ''}${request.queryString}"/>
         <auth:loginLogout logoutUrl="${request.contextPath}/logout/logout" returnUrlPath="${returnUrlPath}"/>
     </div><!-- .site-branding -->
