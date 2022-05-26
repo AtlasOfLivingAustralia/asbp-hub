@@ -131,7 +131,7 @@
     </script>
 
     <asset:stylesheet href="seedpartnership/animations.min.css" />
-    <asset:javascript src="seedpartnership/_all.js"/>
+    <asset:javascript src="seedpartnership/seedpartnership.js"/>
 
     <asset:deferredScripts />
     </body>
