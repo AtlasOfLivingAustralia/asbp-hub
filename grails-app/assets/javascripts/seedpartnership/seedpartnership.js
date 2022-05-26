@@ -10,5 +10,6 @@
 //= require elementor-config.js
 //= require frontend.min.js
 //= require preloaded-elements-handlers.min.js
+//= require_self
 
 console.log('All Seedpartnership JS loaded.');
