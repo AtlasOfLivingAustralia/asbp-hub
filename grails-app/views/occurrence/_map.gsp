@@ -368,7 +368,7 @@
 
         //MAP_VAR.map.on('click', pointLookupClickRegister);
         if (obj === undefined) {
-            MAP_VAR.map.addHandler('paramArea', L.PointClickHandler.extend({obj: MAP_VAR.map}));
+            MAP_VAR.map.addHandler('paramArea', L.PointClickHandler.extend({obj: MAP_VAR.map}))
             MAP_VAR.map.paramArea.enable();
         }
 
@@ -429,8 +429,6 @@
      * A tile layer to map colouring the dots by the selected colour.
      */
     function addQueryLayer(redraw) {
-
-        console.log(MAP_VAR.currentLayers);
         $.each(MAP_VAR.currentLayers, function(index, value){
             MAP_VAR.map.removeLayer(MAP_VAR.currentLayers[index]);
             MAP_VAR.layerControl.removeLayer(MAP_VAR.currentLayers[index]);
@@ -458,7 +456,7 @@
             1: 256, 2:128, 3: 64, 4:32, 5:16, 6:8
         }
 
-        console.log(MAP_VAR.mappingUrl + "/mapping/wms/reflect", MAP_VAR.query + "||END||", MAP_VAR.additionalFqs);
+        // console.log(MAP_VAR.mappingUrl + "/mapping/wms/reflect", MAP_VAR.query + "||END||", MAP_VAR.additionalFqs);
         var mainLayer = L.tileLayer.wms(MAP_VAR.mappingUrl + "/mapping/wms/reflect" + MAP_VAR.query + MAP_VAR.additionalFqs, {
             layers: 'ALA:occurrences',
             format: 'image/png',
@@ -478,7 +476,7 @@
             bgcolor:"0x000000",
             outline:outlineDots,
             ENV: envProperty,
-            opacity: opacity - 0.5,
+            opacity: opacity - 0.6,
             GRIDDETAIL: gridSizeMap[pointSize],
             STYLE: "opacity:"+opacity // for grid data
         });
@@ -620,7 +618,7 @@
 
     function getRecordInfo(){
         // http://biocache.ala.org.au/ws/occurrences/c00c2f6a-3ae8-4e82-ade4-fc0220529032
-        //console.log("MAP_VAR.query", MAP_VAR.query);
+        console.log("MAP_VAR.query", MAP_VAR.query);
         $.ajax({
             url: "${alatag.getBiocacheAjaxUrl()}/occurrences/info" + MAP_VAR.query,
             //jsonp: "callback",
