@@ -637,3 +637,7 @@ div#download {
 #importAreaPanel .panel-heading a:hover {
     opacity: 0.6;
 }
+
+.leaflet-popup-content > .multiRecordFooter {
+    width: 55% !important;
+}
