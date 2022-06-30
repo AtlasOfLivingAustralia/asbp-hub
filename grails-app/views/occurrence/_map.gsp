@@ -476,7 +476,7 @@
             bgcolor:"0x000000",
             outline:outlineDots,
             ENV: envProperty,
-            opacity: opacity - 0.6,
+            opacity: opacity - 0.5,
             GRIDDETAIL: gridSizeMap[pointSize],
             STYLE: "opacity:"+opacity // for grid data
         });
