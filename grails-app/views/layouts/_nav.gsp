@@ -11,7 +11,7 @@
                                 <div class="elementor-element elementor-element-47e899 logo elementor-widget elementor-widget-theme-site-logo elementor-widget-image" data-id="47e899" data-element_type="widget" data-widget_type="theme-site-logo.default">
                                     <div class="elementor-widget-container">
                                         <div class="elementor-image">
-                                            <a href="${asbpHome}">
+                                            <a href="${serverName}">
                                                 <asset:image width="800" height="380" src="asbp/logo.svg" class="attachment-full size-full" alt="" />
                                             </a>
                                         </div>
@@ -34,7 +34,7 @@
                                 <div class="elementor-element elementor-element-73de2216 elementor-nav-menu--stretch elementor-nav-menu__text-align-center elementor-nav-menu__align-right elementor-hidden-tablet elementor-hidden-mobile elementor-nav-menu--dropdown-tablet elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="73de2216" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;<i class=\&quot;fas fa-caret-down\&quot;><\/i>&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
                                     <div class="elementor-widget-container">
                                         <nav migration_allowed="1" migrated="0" role="navigation" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-text e--animation-none">
-                                            <ul id="menu-1-73de2216" class="elementor-nav-menu" data-smartmenus-id="1652248348346284"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-25"><a href="${serverName}" aria-current="page" class="elementor-item elementor-item-active">Home</a></li>
+                                            <ul id="menu-1-73de2216" class="elementor-nav-menu" data-smartmenus-id="1652248348346284"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-25"><a href="${asbpHome}" aria-current="page" class="elementor-item elementor-item-active">Home</a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-544"><a href="${asbpHome}news/" class="elementor-item has-submenu" id="sm-1652248348346284-1" aria-haspopup="true" aria-controls="sm-1652248348346284-2" aria-expanded="false">News</a>
                                                     <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-1652248348346284-2" role="group" aria-hidden="true" aria-labelledby="sm-1652248348346284-1" aria-expanded="false">
                                                         <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-915"><a href="${asbpHome}category/announcements/" class="elementor-sub-item">Announcements</a></li>
@@ -77,7 +77,7 @@
                                             <i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i>			<span class="elementor-screen-only">Menu</span>
                                         </div>
                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" role="navigation" aria-hidden="true" style="top: 45px; width: 1544px; left: 0px;">
-                                            <ul id="menu-2-73de2216" class="elementor-nav-menu" data-smartmenus-id="165224834834866"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-25"><a href="${serverName}" aria-current="page" class="elementor-item elementor-item-active" tabindex="-1">Home</a></li>
+                                            <ul id="menu-2-73de2216" class="elementor-nav-menu" data-smartmenus-id="165224834834866"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-25"><a href="${asbpHome}" aria-current="page" class="elementor-item elementor-item-active" tabindex="-1">Home</a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-544"><a href="${asbpHome}news/" class="elementor-item has-submenu" tabindex="-1" id="sm-165224834834866-1" aria-haspopup="true" aria-controls="sm-165224834834866-2" aria-expanded="false">News</a>
                                                     <ul class="sub-menu elementor-nav-menu--dropdown" id="sm-165224834834866-2" role="group" aria-hidden="true" aria-labelledby="sm-165224834834866-1" aria-expanded="false">
                                                         <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-915"><a href="${asbpHome}category/announcements/" class="elementor-sub-item" tabindex="-1">Announcements</a></li>
@@ -171,7 +171,7 @@
                                         <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" role="navigation" aria-hidden="true">
                                             <ul id="menu-2-13445e6c" class="elementor-nav-menu">
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-25">
-                                                    <a href="${serverName}" aria-current="page" class="elementor-item elementor-item-active" tabindex="-1">Home</a>
+                                                    <a href="${asbpHome}" aria-current="page" class="elementor-item elementor-item-active" tabindex="-1">Home</a>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-544">
                                                     <a href="${asbpHome}news/" class="elementor-item" tabindex="-1">News</a>
