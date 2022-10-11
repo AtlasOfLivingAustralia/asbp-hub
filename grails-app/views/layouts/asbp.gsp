@@ -110,6 +110,10 @@
         ga('send', 'pageview');
     </script>
 
+    <!-- Temporary fix - this file will not minimise during build, causing a compilation failure -->
+    <script type="text/javascript" src="../../assets/javascripts/seedpartnership/frontend-modules.min.js"></script>
+
+
     <asset:deferredScripts />
     </body>
 </html>
