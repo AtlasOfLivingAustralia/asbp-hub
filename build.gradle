@@ -8,7 +8,7 @@ buildscript {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "gradle.plugin.com.github.erdi.webdriver-binaries:webdriver-binaries-gradle-plugin:2.0"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:3.2.4"
-     }
+    }
 }
 
 ext {
@@ -22,8 +22,9 @@ ext {
         geckoDriverVersion = '0.26.0'
     }
 }
-
+// version updated to match biocache-hubs
 version "5.0-SNAPSHOT"
+
 group "au.org.ala"
 
 apply plugin:"eclipse"
@@ -34,6 +35,7 @@ apply plugin:"com.github.erdi.webdriver-binaries"
 apply plugin:"com.bertramlabs.asset-pipeline"
 apply plugin:"org.grails.grails-gsp"
 apply plugin:"maven-publish"
+apply from: "${project.projectDir}/gradle/publish.gradle"
 
 repositories {
     mavenLocal()
@@ -48,7 +50,6 @@ configurations {
     }
 }
 
-
 // Set to true it needed only for development
 boolean inplace = false
 
@@ -61,8 +62,8 @@ if (inplace) {
                 exclude group: 'org.grails.plugins', module: 'ala-ws-plugin'
             }
             compile project(':downloads-plugin')
-            // compile project(':ala-charts-plugin')
-            // compile project(':images-client-plugin')
+//            compile project(':ala-charts-plugin')
+//            compile project(':images-client-plugin')
             compile project(':ala-ws-plugin')
         }
     }
@@ -88,7 +89,7 @@ dependencies {
     compile "org.grails:grails-plugin-services"
     compile "org.grails:grails-plugin-url-mappings"
     compile "org.grails:grails-plugin-interceptors"
-    // compile "org.grails.plugins:cache:5.0.0-ALA:ALA"
+//    compile "org.grails.plugins:cache:5.0.0-ALA:ALA"
     compile "org.grails.plugins:cache"
     compile "org.grails.plugins:async"
     compile "org.grails.plugins:scaffolding"
@@ -105,7 +106,7 @@ dependencies {
     runtime "org.apache.tomcat:tomcat-jdbc"
     runtime "javax.xml.bind:jaxb-api:2.3.1"
     runtime 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
-    // runtime 'jakarta.xml.bind:jakarta.xml.bind-api:3.0.1'
+//    runtime 'jakarta.xml.bind:jakarta.xml.bind-api:3.0.1'
     runtime "com.bertramlabs.plugins:asset-pipeline-grails:3.2.4"
 
     testCompile "io.micronaut:micronaut-inject-groovy"
@@ -119,15 +120,14 @@ dependencies {
     testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:3.14.0"
 
     // Jars
-    compile 'org.apache.httpcomponents:httpclient:4.5.6'
+    compile "org.apache.httpcomponents:httpclient:4.5.6"
     compile 'xml-apis:xml-apis:1.4.01'
 
     // ALA Plugins
-    // compile "org.grails.plugins:ala-auth:3.2.3"
-    // compile "org.grails.plugins:ala-admin-plugin:2.2", noCache
+//    compile "org.grails.plugins:ala-auth:3.2.3"
+    //compile "org.grails.plugins:ala-admin-plugin:2.2", noCache
 
     if (!inplace) {
-        // TODO: Update when newer biocache-hubs plugin is built
         compile "au.org.ala.plugins.grails:biocache-hubs:5.0-SNAPSHOT", noCache
         compile "au.org.ala.plugins.grails:downloads-plugin:3.0-SNAPSHOT", noCache
     }
@@ -150,6 +150,7 @@ bootRun {
     systemProperty springProfilesActive, System.getProperty(springProfilesActive)
 }
 
+
 tasks.withType(GroovyCompile) {
     configure(groovyOptions) {
         forkOptions.jvmArgs = ['-Xmx1024m']
@@ -168,44 +169,27 @@ tasks.withType(Test) {
     systemProperty "webdriver.gecko.driver", System.getProperty('webdriver.gecko.driver')
 }
 
+
 assets {
     minifyJs = true
     minifyCss = true
 }
 
-publishing {
-    repositories {
-        maven {
-            name 'Nexus'
-            url "https://nexus.ala.org.au/content/repositories/${project.version.endsWith('-SNAPSHOT') ? 'snapshots' : 'releases' }"
-            credentials {
-                username = System.getenv('TRAVIS_DEPLOY_USERNAME')
-                password = System.getenv('TRAVIS_DEPLOY_PASSWORD')
-            }
-        }
-    }
-
-    war {
-        enabled=true
-    }
-
-
-    publications {
-        mavenWeb(org.gradle.api.publish.maven.MavenPublication) {
-            pom.withXml {
-                def pomNode = asNode()
-                pomNode.dependencyManagement.replaceNode {}
-
-                // simply remove dependencies without a version
-                // version-less dependencies are handled with dependencyManagement
-                // see https://github.com/spring-gradle-plugins/dependency-management-plugin/issues/8 for more complete solutions
-                pomNode.dependencies.dependency.findAll {
-                    it.version.text().isEmpty()
-                }.each {
-                    it.replaceNode {}
-                }
-            }
-            from components.web
-        }
-    }
+bootJar {
+    enabled = true
+    classifier = 'exec'
+    launchScript()
 }
+
+assemble {
+    dependsOn bootJar
+}
+
+bootWar {
+    enabled = false
+}
+
+publish {
+    dependsOn assemble
+}
+
