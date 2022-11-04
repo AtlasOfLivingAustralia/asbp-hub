@@ -1,0 +1,257 @@
+/**
+ * Add our custom Elementor CSS here
+ */
+
+/* SC Give slide out menu sub-tems a left margin */
+.slide-out-menu .elementor-nav-menu--dropdown .elementor-sub-item {
+	margin-left: 20px;
+}
+
+/* SC Add padding to prev/next post navigation */
+.elementor-post-navigation__separator-wrapper {
+	margin:0 10px;
+}
+
+/* SC Format blog categories and tag widgets */
+.elementor-widget-wp-widget-categories h5,
+.elementor-widget-wp-widget-tag_cloud h5 {
+	display: none;
+}
+.elementor-widget-wp-widget-categories ul,
+.elementor-widget-wp-widget-cbc-taxonomy-video-widget ul {
+	margin-bottom: 0px;
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+	padding-inline-start: 0px;
+	list-style-type: none;
+}
+.elementor-widget-wp-widget-categories li,
+.elementor-widget-wp-widget-cbc-taxonomy-video-widget {
+	margin-bottom: 5px;
+}
+.elementor-widget-wp-widget-tag_cloud a {
+	border: 1px solid var( --e-global-color-868b7b4 );
+	color: var( --e-global-color-primary );
+	padding: 5px 10px;
+	font-family: var( --e-global-typography-1e32ebf-font-family ), Sans-serif !important;
+	font-size: var( --e-global-typography-1e32ebf-font-size ) !important;
+	font-weight: var( --e-global-typography-1e32ebf-font-weight ) !important;
+	text-transform: var( --e-global-typography-1e32ebf-text-transform ) !important;
+	font-style: var( --e-global-typography-1e32ebf-font-style ) !important;
+	text-decoration: var( --e-global-typography-1e32ebf-text-decoration ) !important;
+	letter-spacing: var( --e-global-typography-1e32ebf-letter-spacing ) !important;
+	display: inline-block;
+	margin-bottom: 3px;
+}
+.elementor-widget-wp-widget-tag_cloud a:hover {
+	color: var( --e-global-color-secondary );
+}
+
+/* SC Disable table hover colour added by theme */
+table tbody tr:hover>td,table tbody tr:hover>th {
+	background-color: unset !important;
+}
+
+/* SC Select font size */
+.elementor-field-group .elementor-select-wrapper select {
+	font-size: var( --e-global-typography-text-font-size );
+}		
+
+/* SC Remove unwanted underline on links */
+.no-underline a {
+	text-decoration: none;
+	outline: none;
+}
+
+/* SC Remove unwanted margin on gutenberg media */
+figure {
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+}
+
+/* SC Fix toggle/accordion formatting on new line */
+.elementor-toggle-title,
+.elementor-accordion-title {
+	display: flex;
+	align-items: baseline;
+}
+
+/* SC Fix toggle/accordion formatting */
+.elementor-toggle .elementor-tab-title,
+.elementor-toggle .elementor-tab-title .fas,
+.elementor-accordion .elementor-tab-title,
+.elementor-accordion .elementor-tab-title .fas {
+	line-height: inherit;
+}
+
+/* SC Remove default red hover background on buttons */
+[type=button]:focus,
+[type=button]:hover,
+[type=submit]:focus,
+[type=submit]:hover,
+button:focus,
+button:hover {
+	background-color: inherit;
+}
+
+[type=search] {
+	margin-bottom: 20px;
+}
+
+/* SC Remove form field focus effects */
+.elementor-field-textual {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+/* SC Fix bottom margin WP block images */
+.wp-block-image img {
+	margin-bottom: 20px;
+}
+
+/* SC Adjust default table text font size */
+table {
+	font-size: var( --e-global-typography-text-font-size );
+}
+
+/* SC Icon formatting */
+.elementor-icon.elementor-animation- {
+	color: var( --e-global-color-primary );
+	font-size: 25px;
+}
+.elementor-icon.elementor-animation-:hover {
+	color: var( --e-global-color-secondary );
+}
+
+/* SC Format default buttons */
+button {
+	border: none;
+}
+
+/* SC Place form errors for select fields below field instead of inline */
+.elementor-field-group .elementor-select-wrapper {
+	display: block !important;
+}
+
+/* SC Fix form errors making fields out of alignment */
+.elementor-field-group {
+	display: block;
+}
+.elementor-field-group.elementor-field-type-submit {
+	display: flex;
+}
+
+/* SC Inherit link colour */
+.inherit-link-colour a,
+.inherit-link-colour a:hover {
+	color: inherit;
+}
+
+/* SC Remove or reduce widget bottom margin */
+.no-bottom-margin {
+	margin-bottom: 0px !important;
+}
+.small-bottom-margin {
+	margin-bottom: 5px !important;
+}
+.medium-bottom-margin {
+	margin-bottom: 10px !important;
+}
+
+/* SC Add margin below accordion titles */
+.accordion-gaps .elementor-accordion-item {
+	margin-bottom: 20px;
+}
+
+/* SC Adjust button hover/focus formatting */
+[type=button]:focus,
+[type=submit]:focus,
+button:focus,
+.elementor-upload-field:focus {
+	outline: none;
+}
+
+/* SC Remove form field focus effects */
+input,
+textarea {
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+}
+
+/* SC Fix elementor social icon line height */
+.elementor-social-icons-wrapper {
+	line-height: 1;
+}
+
+/* SC Adjust padding below lists */
+ul,
+ol {
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+/* SC Remove margin from last item in text widget */
+.elementor-text-editor :last-child {
+	margin-bottom: 0px;
+}
+
+/* SC Font smoothing formatting */
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+/* SC Fix heading margins in text widget */
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+/* SC Adjust default column gap to 20px */
+.elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated>.elementor-widget-wrap {
+	padding: 20px;
+}
+
+/* SC Fix default 0.9 opacity on hover of social icons */
+.elementor-social-icon:hover {
+	opacity: 1;
+}
+
+/* SC Set icon list icons to align to top */
+.icon-list-align-top .elementor-icon-list-item, .icon-list-align-top .elementor-icon-list-item a {
+	align-items: start;
+}
+.icon-list-align-top.elementor-widget-icon-list .elementor-icon-list-icon i {
+	line-height: var( --e-global-typography-text-line-height );
+}
+
+/* SC Align the last element to bottom */
+.align-last-child-bottom .elementor-widget-wrap {
+	    flex-direction: column;
+}
+.align-last-child-bottom .elementor-widget-wrap div:last-child {
+ margin-top: auto;
+}
+
+/* SC Remove 8px left border on sub-menu items */
+ul.elementor-nav-menu--dropdown a, ul.elementor-nav-menu--dropdown a:focus, ul.elementor-nav-menu--dropdown a:hover {
+	border-left: none;
+}
+
+/* SC Adjust font size and line height for popups (from 12px) */
+.dialog-message {
+    font-size: var(--e-global-typography-text-font-size);
+    line-height: var(--e-global-typography-text-line-height);
+}
+
+/* SC Vertical center an "Icon" widget */
+.icon-vertical-center .elementor-icon-wrapper .elementor-icon {
+    vertical-align: middle;
+}
+
+/* SC Remove default focus colour on menu items */
+.elementor-nav-menu--dropdown .elementor-item:focus {
+	background-color: transparent !important;
+}

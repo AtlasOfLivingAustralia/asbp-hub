@@ -1,0 +1,643 @@
+/*
+*= require autocomplete/autocomplete-1.12.1.css
+*= require popover.css
+ */
+
+/* Global
+-------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.colophon-wrapper {
+    padding-top: 40px;
+    margin-top: auto !important;
+}
+
+#colophon {
+    background-color: #F9F9F9 !important;
+    border-top: 1px solid #d1d1d1 !important;
+    border-bottom: 1px solid #d1d1d1 !important;
+    font-size: 12px !important;
+    line-height: 1.6em !important;
+    color: #333a3f !important;
+}
+
+#main-content {
+    margin-top: 26px !important;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#headingBar h1 {
+    margin-bottom: 32px !important;
+    font-size: 32px !important;
+}
+
+body {
+    padding-top: 0;
+    overflow-y: scroll;
+}
+
+body h1, body h2, body h3, body h4, body h5 {
+    font-weight:300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Abel", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+a.newDownload {
+    color: #FFFFFF !important;
+}
+
+a:hover, a:focus, .btn-link:focus, .btn-link:hover {
+    color: #3F9D87
+}
+
+.btn-default {}
+
+*::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container::before, .container::after, .nav-collapse::before, .nav-collapse::after {
+    content: "";
+    display: table;
+}
+
+
+/* Site branding
+--------------------------------*/
+.site-branding {
+    display: flex;
+    padding: 18px 36px;
+    background-color: #25836C;
+    margin-bottom: 16px;
+}
+
+.site-branding i {
+    margin-right: 14px;
+}
+
+.site-branding a, .site-branding i {
+    color: white;
+}
+
+.site-branding span.auth-divider {
+    color: #ddd;
+    margin: 0px 6px;
+    cursor: default;
+}
+
+/* footer
+--------------------------*/
+footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer .row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+footer .textwidget {
+    margin-top: 10px;
+}
+
+.col-sm-6 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.contact-us .textwidget a {
+    color: #000;
+}
+
+img.poweredByAlaLogo {
+    height: 65px;
+    margin: 5px;
+}
+
+.contact-us .textwidget a {
+    color: #25836D;
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    .col-sm-6 {
+        float: left;
+        width: 50%;
+    }
+
+    .contact-us .textwidget {
+        text-align: right;
+    }
+
+    .contact-us .textwidget a {
+        display: inline-block;
+        margin-top: 45px;
+    }
+}
+
+
+
+/* Leaflet attribution control
+------------------------------------------------*/
+#main-content .leaflet-container a {
+    color: #006600;
+}
+
+/* Override some Bootstrap stuff
+------------------------------------------------*/
+@media (min-width: 768px) {
+    #asbp-nav .nav.pull-right:last-child {
+        margin-right: 0;
+    }
+}
+
+/* Colour for highlighted text in drop-down
+-------------------------------------------------*/
+.ac_results li strong {
+    color: #006600;
+}
+
+/* Facets
+-------------------------------------------------*/
+#facetWell .sidebar h4 {
+    margin-top: 10px;
+}
+
+#facetWell span.fa.fa-square-o {
+    margin-right: 3px;
+}
+
+body #main-content #customiseFacetsButton > .dropdown-menu, #main-content #resultsReturned .dropdown-menu {
+    background-color: white;
+}
+
+#customiseFacetsButton h4 {
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 510px;
+}
+
+.padding-left-1 {
+    padding-left: 1em;
+}
+
+.form-control {
+    height: 40px;
+}
+
+.btn {
+    padding: 10px 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.btn-primary {
+    color: #ffffff !important;
+    background-color: #31435E;
+
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+    color: #ffffff;
+    background-color: #4B5D78 !important;
+}
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #406e11;
+}
+
+/* from base.css */
+a:hover, #content2 a:hover {
+    text-decoration: underline;
+}
+
+#nav li a {
+    font-size: 16px;
+}
+#contentBox {
+    width: 1000px;
+}
+label {
+    display: inline;
+}
+input, textarea, select, button {
+    margin: 0;
+}
+form input {
+    padding: 0;
+}
+form p input {
+    float: none
+}
+table th {
+    text-align: left;
+    padding: 6px 12px;
+    font-weight: bold;
+    color: #444;
+}
+table td, table th  {
+    text-align: left;
+    padding: 4px 6px;
+    line-height: 1.3em;
+    vertical-align: top;
+    color: #666;
+}
+table.compact, table.nested {
+    width: 100%;
+    margin: 2px 0 4px 0;
+}
+#content3 table.compact  {
+    border-bottom: 1px solid #CCC;
+}
+table.compact thead {
+    border: none;
+}
+table.compact th, table.compact td {
+    padding: 4px;
+}
+table.nested th, table.nested td {
+    padding: 0;
+}
+td.labels {
+    width: 170px;
+}
+
+input.taxaLookup {
+    float: right;
+    margin-right: 10px;
+}
+div.autoLine2 {
+    color: #777;
+}
+.matchedName {
+    display: inline-block;
+    padding: 2px 8px 4px 8px;
+    margin-right: 10px;
+    border: 0px solid #CCC;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    background-color: #C5DCEE;
+    max-width: 90%;
+    float: left;
+    max-height: 15px;
+    overflow: hidden;
+}
+#taxonSearchHint {
+    font-size: 12px;
+    margin-top: 5px;
+}
+table.compact td select {
+    width: auto;
+}
+input.region_autocomplete {
+    width: 350px;
+}
+#contentBox div.imageThumb {
+    float: left;
+    padding: 2px;
+    line-height: 0;
+}
+div.fullWidthHeader {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    padding-left: 0 !important;
+    border-bottom: 2px solid gray;
+}
+span#taxonName {
+    color: black;
+}
+#content2 div.taxaDescription p {
+    padding-bottom: 10px;
+}
+.bold {
+    font-weight: bold;
+}
+
+.freetext {
+    font-size: 16px;
+}
+
+.freetext {
+    font-size: 16px;
+}
+
+#userFlaggedIssuesDetails {
+    text-align: left;
+}
+
+#userFlaggedIssuesDetails p {
+    margin-top:5px;
+    padding:3px;
+    border-bottom: 1px solid #CCC;
+}
+
+#simpleSearchDiv  input[type=text] {
+    width: 240px;
+}
+
+#simpleSearchDiv  input.occurrence_date {
+    width: 110px;
+}
+
+#extendedOptions {
+    padding-left:10px;
+}
+
+.toggleSection {
+    display:block;
+    padding-left: 10px;
+    padding-top: 7px;
+    padding-bottom: 24px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #DDD;
+}
+#extendedOptions {
+    display: none;
+}
+a.toggleTitle {
+    background: url("../../images/plus.gif") 0 5px no-repeat;
+    display: block;
+    padding-left: 14px;
+    font-weight: bold;
+    color: #31435E !important;
+}
+a.toggleTitleActive {
+    background: url("../../images/minus.gif") 0 5px  no-repeat;
+    display: block;
+    padding-left: 14px;
+}
+a.toggleOptions {
+    background: url("../../images/plus.gif") 0 3px no-repeat;
+    display: block;
+    padding-left: 14px;
+}
+a.toggleOptionsActive {
+    background: url("../../images/minus.gif") 0 3px  no-repeat;
+    display: block;
+    padding-left: 14px;
+}
+#content3 #simpleSearchDiv table.compact  {
+    border-bottom: none;
+}
+table#taxonomyOptions {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.sidebar h3 {
+    font-size: 16px;
+}
+
+#listHeader {
+    padding-bottom: 12px !important;
+}
+
+#listHeader h1 {
+    font-size: 26px;
+}
+
+#nameMatchingOptions {
+    display:none;
+}
+
+abbr {
+    border-bottom: black dashed 1px;
+    cursor: help;
+}
+
+/* Bootstrap tabs CSS */
+
+.tab-content {
+    padding: 15px;
+    border-bottom: 1px solid #ddd !important;
+    border-right: 1px solid #ddd !important;
+    border-left: 1px solid #ddd !important;
+}
+
+#content ul.nav-tabs {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+#content .nav-tabs > .active > a,
+#content .nav-tabs > .active > a:hover,
+#content .nav-tabs > .active > a:focus,
+#content #facetWell {
+    background-color: #F9F9F9;
+    background-image: none;
+}
+
+#content .nav-tabs li a {
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    margin-right: 0;
+}
+
+#content .nav-tabs li.active a,
+#content .nav-tabs li:not(.active) a:hover {
+    background-color: transparent;
+    color: #25836C;
+    border-bottom: 3px solid #25836C;
+}
+
+#content .nav-tabs li.active a:hover,
+#content .nav-tabs li.active a:focus {
+    background-color: transparent;
+}
+
+#content .nav-tabs li:not(.active) a {
+    color: #868E96;
+    border-bottom: 3px solid #DEE2E6;
+}
+
+.tab-content {
+    background-color: #F9F9F9;
+}
+
+#taxonSearchDiv .radio {
+    margin: 5px;
+    font-size: 13px;
+}
+
+/* Download div */
+div#download {
+    display: none;
+    font-size: 13px;
+    line-height: 1.4em;
+}
+#downloadForm, #downloadMapForm {
+    text-align: left;
+}
+#downloadForm label, #downloadMapForm label {
+    width: 35%;
+    display: inline-block;
+    text-align: right;
+    padding-right: 10px;
+    color: #444;
+}
+#download p, #downloadMapForm p {
+    margin: 0;
+}
+#downloadForm input, #downloadMapForm input, #downloadMapForm select {
+    float: none;
+    margin: 0;
+}
+#downloadMapForm p {
+    padding: 4px 6px;
+}
+#termsOfUseDownload {
+    text-align:left; padding-bottom:15px;
+}
+#breadcrumb ul, #breadcrumb ol  {
+    margin-bottom: 2px;
+}
+
+.tooltip {
+    word-wrap: break-word;
+}
+.tooltip-inner {
+    max-width: none;
+}
+
+/* Override the pagination styles */
+.pagination {
+    margin-top: 48px !important;
+}
+
+.pagination a {
+    background-color: white !important;
+}
+
+.pagination a,
+.pagination span {
+    background-image: none !important;
+    box-shadow: none !important;
+    padding: 2px 8px !important;
+    font-size: 16px !important;
+    border: none !important;
+    background-color: white !important;
+    text-shadow: none;
+}
+
+.pagination a:hover,
+.pagination span:not(.currentStep):hover {
+    background-color: #ccc !important;
+}
+
+.pagination a,
+.pagination span:not(.currentStep) {
+    color: #666 !important;
+}
+
+.pagination .currentStep {
+    background-color: #25836D !important;
+    opacity: 1 !important;
+}
+
+/* Override the biocache-hubs jQuery.hover styling */
+
+#results {
+    padding-right: 0 !important;
+    padding-top: 15px !important;
+}
+
+#results .recordRow {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    padding: 15px;
+}
+
+#results .recordRow:hover {
+    background-color: #E9ECEF !important;
+}
+
+#excluded .exclude-count-label {
+    color: inherit;
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* Miscellaneous styling fixes
+---------------------------*/
+
+/* The settings button on the search results page */
+.DQPrefSettingsLink {
+    padding: 8px 16px;
+}
+
+#advancedSearchLink {
+    padding-bottom: 12px !important;
+}
+
+/* Advanced search clear all button */
+#clearAll {
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+#download-button-area {
+    padding-right: 0px !important;
+}
+
+#searchControls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sortWidgets {
+    padding-top: 0px !important;
+    height: 100%;
+}
+
+/* Spatial search tab */
+#importAreaPanel .panel-default {
+    border: none;
+}
+
+#importAreaPanel .panel-heading {
+    border-radius: 6px;
+    background-color: #31435E;
+}
+
+#importAreaPanel .panel-heading a {
+    color: white;
+}
+
+#importAreaPanel .panel-heading a:hover {
+    opacity: 0.6;
+}
+
+.leaflet-popup-content > .multiRecordFooter {
+    width: 55% !important;
+}

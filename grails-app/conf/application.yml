@@ -1,96 +1,96 @@
 ---
 grails:
-    profile: web
-    codegen:
-        defaultPackage: au.org.ala.hub
-    config:
-        locations:
-            - file:/data/asbp-hub/config/asbp-hub-config.properties
-            - file:/data/asbp-hub/config/asbp-hub-config.yml
-            - file:/data/asbp-hub/config/asbp-hub-config.groovy
-    spring:
-        transactionManagement:
-            proxies: false
-    gorm:
-        # Whether to autowire entities.
-        # Disabled by default for performance reasons.
-        autowire: false
-        reactor:
-            # Whether to translate GORM events into Reactor events
-            # Disabled by default for performance reasons
-            events: false
-    plugins:
-        twitterbootstrap:
-            fixtaglib: true
+  profile: web
+  codegen:
+    defaultPackage: au.org.ala.hub
+  config:
+    locations:
+      - file:/data/asbp-hub/config/asbp-hub-config.properties
+      - file:/data/asbp-hub/config/asbp-hub-config.yml
+      - file:/data/asbp-hub/config/asbp-hub-config.groovy
+  spring:
+    transactionManagement:
+      proxies: false
+  gorm:
+    # Whether to autowire entities.
+    # Disabled by default for performance reasons.
+    autowire: false
+    reactor:
+      # Whether to translate GORM events into Reactor events
+      # Disabled by default for performance reasons
+      events: false
+  plugins:
+    twitterbootstrap:
+      fixtaglib: true
 info:
-    app:
-        name: '@info.app.name@'
-        version: '@info.app.version@'
-        grailsVersion: '@info.app.grailsVersion@'
-        description: 'The Australian Seed Bank'
+  app:
+    name: '@info.app.name@'
+    version: '@info.app.version@'
+    grailsVersion: '@info.app.grailsVersion@'
+    description: 'The Australian Seedbank Partnership'
 spring:
-    main:
-        banner-mode: "off"
-    groovy:
-        template:
-            check-template-location: false
+  main:
+    banner-mode: "off"
+  groovy:
+    template:
+      check-template-location: false
 # Spring Actuator Endpoints are Disabled by Default
 endpoints:
+  enabled: true
+  jmx:
     enabled: true
-    jmx:
-        enabled: true
 
 ---
 grails:
-    mime:
-        disable:
-            accept:
-                header:
-                    userAgents:
-        types:
-            all: '*/*'
-            atom: application/atom+xml
-            css: text/css
-            csv: text/csv
-            form: application/x-www-form-urlencoded
-            html:
-              - text/html
-              - application/xhtml+xml
-            js: text/javascript
-            json:
-              - application/json
-              - text/json
-            multipartForm: multipart/form-data
-            pdf: application/pdf
-            rss: application/rss+xml
-            text: text/plain
-            hal:
-              - application/hal+json
-              - application/hal+xml
-            xml:
-              - text/xml
-              - application/xml
-    urlmapping:
-        cache:
-            maxsize: 1000
-    controllers:
-        defaultScope: singleton
-    converters:
-        encoding: UTF-8
-    views:
-        default:
-            codec: html
-        gsp:
-            encoding: UTF-8
-            htmlcodec: xml
-            codecs:
-                expression: html
-                scriptlets: html
-                taglib: none
-                staticparts: none
-#endpoints:
-#    jmx:
-#        unique-names: true
+  mime:
+    disable:
+      accept:
+        header:
+          userAgents:
+    types:
+      all: '*/*'
+      atom: application/atom+xml
+      css: text/css
+      csv: text/csv
+      form: application/x-www-form-urlencoded
+      html:
+        - text/html
+        - application/xhtml+xml
+      js: text/javascript
+      json:
+        - application/json
+        - text/json
+      multipartForm: multipart/form-data
+      pdf: application/pdf
+      rss: application/rss+xml
+      text: text/plain
+      hal:
+        - application/hal+json
+        - application/hal+xml
+      xml:
+        - text/xml
+        - application/xml
+  urlmapping:
+    cache:
+      maxsize: 1000
+  controllers:
+    defaultScope: singleton
+  converters:
+    encoding: UTF-8
+  views:
+    default:
+      codec: html
+    gsp:
+      encoding: UTF-8
+      htmlcodec: xml
+      codecs:
+        expression: html
+        scriptlets: html
+        taglib: none
+        staticparts: none
+endpoints:
+  jmx:
+    unique-names: true
 ---
 
 #logging:
@@ -105,14 +105,15 @@ headerAndFooter:
 speciesGroupsIgnore: "Animals,Arthropods,Bacteria,Crustaceans,Dicots,Insects,Molluscs,Protozoa"
 
 bie:
-  baseUrl: "https://bie.ala.org.au/"
+  baseUrl: "https://bie.ala.org.au"
   searchPath: "/search"
   autocompleteHints: "fq='kingdom:Plantae'"
 
 biocache:
-  baseUrl: "https://biocache.ala.org.au/ws"
+  baseUrl: "https://biocache-ws.ala.org.au/ws"
   apiKey: "not-your-api-key-to-use"
   queryContext: "data_hub_uid:dh4" # data hub uid
+  groupedFacetsUrl: "file:///data/asbp-hub/config/grouped_facets_asbp.json"
 
 spatial:
   baseURL: "https://spatial.ala.org.au/"
@@ -128,45 +129,58 @@ dataQualityChecksUrl: "https://docs.google.com/spreadsheet/pub?key=0AjNtzhUIIHeN
 clubRoleForHub: "ROLE_ADMIN"
 
 skin:
-    layout: "asbp"
-    orgNameLong: "The Australian Seed Bank"
-    orgNameShort: "ASBP"
-    includeBaseUrl: true
-    fluidLayout: true
-    useAlaBie: true
-    taxaLinks:
-       baseUrl:  "https://bie.ala.org.au/species/"
+  layout: "asbp"
+  orgNameLong: "Australian Seedbank Partnership"
+  orgNameShort: "ASBP"
+  includeBaseUrl: true
+  headerUrl: "classpath:resources/generic-header.jsp" # can be external URL
+  footerUrl: "classpath:resources/generic-footer.jsp" # can be external URL
+  fluidLayout: true
+  useAlaBie: true
+  taxaLinks:
+    baseUrl:  "https://bie.ala.org.au/species/"
 privacyPolicy: "https://www.ala.org.au/about/terms-of-use/privacy-policy/"
-useDownloadPlugin: true
+
 map:
-    pointColour: "df4a21"
-    zoomOutsideScopedRegion: false
-    defaultLatitude: "-27.6"
-    defaultLongitude: "141.0"
-    defaultZoom: "4"
+  pointColour: "df4a21"
+  zoomOutsideScopedRegion: false
+  defaultLatitude: "-27.6"
+  defaultLongitude: "141.0"
+  defaultZoom: "4"
 
 security:
-    cas:
-        uriFilterPattern: '/admin/.*,/registration/editAccount,/my-profile,/my-profile/,/myprofile/,/myprofile,/profile/.*,/admin/,/admin,/registration/update,/registration/update/.*,/monitoring,/monitoring/*,/registration/disableAccount/.*,/registration/disableAccount,/admin/admin/downloadUsersCsvFile,/alaAdmin.*'
+  core:
+    uriFilterPattern: '/admin/*,/download/*,/proxy/*,/occurrence/*'
+  #        uriFilterPattern: '/admin/*,/registration/editAccount,/my-profile,/my-profile/,/myprofile/,/myprofile,/profile*,/admin/,/admin,/registration/update,/registration/update/*,/monitoring,/monitoring/*,/registration/disableAccount/*,/registration/disableAccount,/admin/admin/downloadUsersCsvFile,/alaAdmin*'
+  cas:
+    enabled: false # default is true, undefined behaviour if this omitted
+  oidc:
+    enabled: true # default is false
+    discoveryUri: 'https://auth-dev.ala.org.au/cas/oidc/.well-known'
+    clientId: 'change me'
+    secret: 'change me'
+    scope: 'openid profile email ala roles users/read'
 
+webservice:
+  jwt: true
 #server:
-#    contextPath: /ozcam-hub
+#    contextPath: /asbp-hub
 #    port: 8080
 
 environments:
-    development:
-        grails:
-            serverURL: "http://devt.ala.org.au:8080"
-        security:
-            cas:
-                appServerName: "https://auth.ala.org.au"
-    test:
-        security:
-            cas:
-                appServerName: "https://auth.ala.org.au"
-    production:
-        grails:
-            serverURL: "https://asbp.ala.org.au/"
-        security:
-            cas:
-                appServerName: "https://auth.ala.org.au"
+  development:
+    grails:
+      serverURL: "http://devt.ala.org.au:8080"
+    security:
+      cas:
+        appServerName: "https://auth.ala.org.au"
+  test:
+    security:
+      cas:
+        appServerName: "https://auth.ala.org.au"
+  production:
+    grails:
+      serverURL: "https://asbp.ala.org.au"
+    security:
+      cas:
+        appServerName: "https://auth.ala.org.au"

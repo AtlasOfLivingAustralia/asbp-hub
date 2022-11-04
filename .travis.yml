@@ -1,11 +1,13 @@
 language: groovy
 jdk:
-- openjdk8
+- openjdk11
 sudo: false
 branches:
   only:
   - master
   - grails3
+  - tech-stack-upgrade
+  - cloud-uplift
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -22,5 +24,6 @@ after_success:
 
 env:
   global:
+  - JAVA_TOOL_OPTIONS=-Dhttps.protocols=TLSv1.2
   - secure: JKvwCLZapyEjcNF+da5s1lM0MhYW2ZmkBJbmj+A9G3CkxPNnhGB9tpRO1daIFSgYuFnZxER3kkqN+gYNWSzhxY9DpRxRt+j/X46RhD8g5NNrImXhwkYznsQPE9u9uoP6HyEbKrn+MelTBE5GVmpf1zAmG8j87VbsSJUdUm5t0Ys=
   - secure: PlC/+3gKO3rLwzyDUh6YiDuTBgqGEF0apz/8yiLz/5qqfnPECH5CNydImq/RLwkietyzteSLhpslp2CvAIc7DcX0aOsPF4H/YBWpxoWkk0lARWCswNMTc/46+orpfN5WvmZRkzEyQr0gm4hoYcjtV5BuEsTN8XAkh1+D0L6SLNM=
