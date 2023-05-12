@@ -1,7 +1,7 @@
 rootProject.name='asbp-hub'
 // Inplace plugin config
 // Set to true it needed only for development
-boolean inplace = true
+boolean inplace = false
 
 if (inplace) {
     include ':biocache-hubs'
@@ -16,6 +16,6 @@ if (inplace) {
 //    project(':ala-bootstrap3').projectDir = new File(settingsDir, '../ala-bootstrap3')
 //    include ':ala-auth'
 //    project(':ala-auth').projectDir = new File(settingsDir,'../ala-auth-plugin')
-    include ':ala-ws-plugin'
-    project(':ala-ws-plugin').projectDir = new File(settingsDir, '../ala-ws-plugin')
+//    include ':ala-ws-plugin'
+//    project(':ala-ws-plugin').projectDir = new File(settingsDir, '../ala-ws-plugin')
 }

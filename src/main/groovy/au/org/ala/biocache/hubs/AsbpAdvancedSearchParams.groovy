@@ -16,8 +16,6 @@ package au.org.ala.biocache.hubs
 
 import grails.validation.Validateable
 import groovy.util.logging.Log4j
-import org.apache.commons.httpclient.URIException
-import org.apache.commons.httpclient.util.URIUtil
 import org.grails.web.util.WebUtils
 import au.org.ala.biocache.hubs.AdvancedSearchParams
 
@@ -68,8 +66,8 @@ class AsbpAdvancedSearchParams extends AdvancedSearchParams implements Validatea
             finalQuery = "q=" + query
         } else {
             try {
-                finalQuery = "q=" + URIUtil.encodeWithinQuery(q.toString().trim())  //URLEncoder.encode(q.toString().trim()); // TODO: use non-deprecated version with UTF-8
-            } catch (URIException ex) {
+                finalQuery = "q=" + URLEncoder.encode(q.toString().trim(), 'UTF-8')
+            } catch (Exception ex) {
                 log.error("URIUtil error: " + ex.getMessage(), ex)
                 finalQuery = "q=" + q.toString().trim(); // fall back
             }
