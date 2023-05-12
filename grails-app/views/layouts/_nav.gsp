@@ -1,5 +1,5 @@
-<g:set var="serverName" value="${grailsApplication.config.serverName}"/>
-<g:set var="asbpHome" value="${grailsApplication.config.organisation.baseUrl}"/>
+<g:set var="serverName" value="${grailsApplication.config.getProperty('serverName')}"/>
+<g:set var="asbpHome" value="${grailsApplication.config.getProperty('organisation.baseUrl')}"/>
 <div data-elementor-type="header" data-elementor-id="876" class="elementor elementor-876 elementor-location-header">
     <div class="elementor-section-wrap">
         <header class="elementor-section elementor-top-section elementor-element elementor-element-69960df5 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="69960df5" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">

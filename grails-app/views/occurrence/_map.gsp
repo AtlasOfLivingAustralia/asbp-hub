@@ -1,14 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <asset:stylesheet src="map.css"/>
-<g:set var="shortName" value="${grailsApplication.config.skin.orgNameShort}"/>
+<g:set var="shortName" value="${grailsApplication.config.getProperty('skin.orgNameShort')}"/>
 <div style="margin-bottom: 10px">
-    <g:if test="${grailsApplication.config.skin.useAlaSpatialPortal?.toBoolean()}">
+    <g:if test="${grailsApplication.config.getProperty('skin.useAlaSpatialPortal', Boolean, false)}">
         <g:set var='spatialPortalLink' value="${sr.urlParameters}"/>
-        <g:set var='spatialPortalUrlParams' value="${grailsApplication.config.spatial.params}"/>
+        <g:set var='spatialPortalUrlParams' value="${grailsApplication.config.getProperty('spatial.params')}"/>
         <g:set var='spatialEnableQualityWarning' value="${grailsApplication.config.getProperty('spatial.enableQualityWarning', Boolean, false)}" />
         <g:if test="${!spatialEnableQualityWarning || searchRequestParams.disableAllQualityFilters || qualityFiltersByLabel.isEmpty()}">
             <a id="spatialPortalLink" class="btn btn-default btn-sm tooltips"
-               href="${grailsApplication.config.spatial.baseUrl}${spatialPortalLink}${spatialPortalUrlParams}" title="<g:message code="map.spatialportal.btn.title.param" args="${[shortName]}"/>">
+               href="${grailsApplication.config.getProperty('spatial.baseUrl')}${spatialPortalLink}${spatialPortalUrlParams}" title="<g:message code="map.spatialportal.btn.title.param" args="${[shortName]}"/>">
                 <i class="fa fa-map-marker"></i>&nbsp;&nbsp;<g:message code="map.spatialportal.btn.label" default="View in spatial portal"/></a>
         </g:if>
         <g:else>
@@ -72,7 +72,7 @@
             </td>
             <td>
                 <label for="outlineDots"><g:message code="map.maplayercontrols.tr01td04.label" default="Outline"/>:</label>
-                <input type="checkbox" name="outlineDots" ${grailsApplication.config.map?.outlineDots ? 'checked="checked"' : ''} value="true" class="layerControls" id="outlineDots">
+                <input type="checkbox" name="outlineDots" ${grailsApplication.config.getProperty('map.outlineDots') ? 'checked="checked"' : ''} value="true" class="layerControls" id="outlineDots">
             </td>
         </tr>
     </table>
@@ -104,12 +104,13 @@
 
     //var mbAttr = 'Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, imagery &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
 	//var mbUrl = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png';
-    var defaultBaseLayer = L.tileLayer("${grailsApplication.config.map.minimal.url}", {
-            attribution: "${raw(grailsApplication.config.map.minimal.attr)}",
-            subdomains: "${grailsApplication.config.map.minimal.subdomains}",
-            mapid: "${grailsApplication.config.map.mapbox?.id?:''}",
-            token: "${grailsApplication.config.map.mapbox?.token?:''}"
-        });
+
+    var defaultBaseLayer = L.tileLayer("${grailsApplication.config.getProperty('map.minimal.url')}", {
+        attribution: "${raw(grailsApplication.config.getProperty('map.minimal.attr'))}",
+        subdomains: "${grailsApplication.config.getProperty('map.minimal.subdomains', String, '')}",
+        mapid: "${grailsApplication.config.getProperty('map.mapbox.id', String, '')}",
+        token: "${grailsApplication.config.getProperty('map.mapbox.token', String, '')}"
+    });
 
     var MAP_VAR = {
         map : null,
@@ -117,17 +118,17 @@
         query : "${searchString}", // e.g. "?q=*%3A*&lat=-34.266296&lon=145.3838&radius=154.8"
         queryDisplayString : "${queryDisplayString}", // e.g. "[all records] - within 154.8 km of point(-34.266, 145.384)"
         center: [-23.6,133.6],
-        defaultLatitude : "${grailsApplication.config.map.defaultLatitude?:'-23.6'}",
-        defaultLongitude : "${grailsApplication.config.map.defaultLongitude?:'133.6'}",
-        defaultZoom : "${grailsApplication.config.map.defaultZoom?:'4'}",
+        defaultLatitude : "${grailsApplication.config.getProperty('map.defaultLatitude', String, '-23.6')}",
+        defaultLongitude : "${grailsApplication.config.getProperty('map.defaultLongitude', String, '133.6')}",
+        defaultZoom : "${grailsApplication.config.getProperty('map.defaultZoom', String, '4')}",
         overlays : {
-            <g:if test="${grailsApplication.config.getProperty("map.overlay.url") && overlayList?.size > 0}">
+            <g:if test="${grailsApplication.config.getProperty('map.overlay.url') && overlayList?.size > 0}">
                 <g:each in="${overlayList}" var="layer">
-                    "${layer.layerDisplayName?.encodeAsJs()?:'overlay'}" : L.tileLayer.wms("${grailsApplication.config.getProperty("map.overlay.url")}", {
+                    "${layer.layerDisplayName?.encodeAsJs()?:'overlay'}" : L.tileLayer.wms("${grailsApplication.config.getProperty('map.overlay.url')}", {
                     layers: 'ALA:${layer.layerName}',
                     format: 'image/png',
                     transparent: true,
-                    opacity: ${grailsApplication.config.getProperty("map.overlay.opacity","0.5")},
+                    opacity: ${grailsApplication.config.getProperty('map.overlay.opacity', String, '0.5')},
                     attribution: "${layer.source}"
                 }),
                 </g:each>
@@ -143,7 +144,7 @@
         layerControl : null,
         currentLayers : [],
         additionalFqs : '',
-        zoomOutsideScopedRegion: ${(grailsApplication.config.map.zoomOutsideScopedRegion == false || grailsApplication.config.map.zoomOutsideScopedRegion == "false") ? false : true},
+        zoomOutsideScopedRegion: ${grailsApplication.config.getProperty('map.zoomOutsideScopedRegion', Boolean, false)},
         removeFqs: ''
     };
 
@@ -195,7 +196,7 @@
             center: [MAP_VAR.defaultLatitude, MAP_VAR.defaultLongitude],
             zoom: MAP_VAR.defaultZoom,
             minZoom: 1,
-            scrollWheelZoom: ${(grailsApplication.config.map.scrollWheelZoom == true || grailsApplication.config.map.scrollWheelZoom == "true") ? true : false},
+            scrollWheelZoom: ${grailsApplication.config.getProperty('map.scrollWheelZoom', Boolean, false)},
             fullscreenControl: true,
             fullscreenControlOptions: {
                 position: 'topleft'
@@ -441,7 +442,7 @@
         var opacity = $('#opacityslider-val').html();
         var outlineDots = $('#outlineDots').is(':checked');
 
-        var envProperty = "color:${grailsApplication.config.map.pointColour};name:circle;size:"+pointSize+";opacity:"+opacity
+        var envProperty = "color:${grailsApplication.config.getProperty('map.pointColour')};name:circle;size:"+pointSize+";opacity:"+opacity
 
         if(colourByFacet){
             if(colourByFacet == "gridVariable"){
@@ -484,7 +485,7 @@
         if(redraw){
              if(!colourByFacet){
                 $('.legendTable').html('');
-                addDefaultLegendItem("${grailsApplication.config.map.pointColour}");
+                addDefaultLegendItem("${grailsApplication.config.getProperty('map.pointColour')}");
              } else if (colourByFacet == 'grid') {
                  $('.legendTable').html('');
                  addGridLegendItem();
@@ -762,7 +763,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-default" data-dismiss="modal" aria-hidden="true"><g:message code="map.spatialportal.redirect.btn.cancel.label" default="Cancel"/></button>
-                <a class="btn btn-primary" href="${grailsApplication.config.spatial.baseUrl}${spatialPortalLink}${spatialPortalUrlParams}" title="<g:message code="map.spatialportal.btn.title.param" args="${[shortName]}"/>"><g:message code="map.spatialportal.redirect.btn.ok.label" default="Go to Spatial Portal"/></a>
+                <a class="btn btn-primary" href="${grailsApplication.config.getProperty('spatial.baseUrl')}${spatialPortalLink}${spatialPortalUrlParams}" title="<g:message code="map.spatialportal.btn.title.param" args="${[shortName]}"/>"><g:message code="map.spatialportal.redirect.btn.ok.label" default="Go to Spatial Portal"/></a>
             </div>
         </div>
     </div>
@@ -875,10 +876,10 @@
                         <label for="baseMap" class="col-md-5 control-label"><g:message code="map.downloadmap.field09.label" default="Base layer"/></label>
                         <div class="col-md-6">
                             <select name="baseMap" id="baseMap" class="form-control">
-                                <g:each in="${grailsApplication.config.mapdownloads.baseMaps}" var="baseMap">
+                                <g:each in="${grailsApplication.config.getProperty('mapdownloads.baseMaps')}" var="baseMap">
                                     <option value="basemap.${baseMap.value.name}"><g:message code="${baseMap.value.i18nCode}" default="${baseMap.value.displayName}"/></option>
                                 </g:each>
-                                <g:each in="${grailsApplication.config.mapdownloads.baseLayers}" var="baseLayer">
+                                <g:each in="${grailsApplication.config.getProperty('mapdownloads.baseLayers')}" var="baseLayer">
                                     <option value="baselayer.${baseLayer.value.name}"><g:message code="${baseLayer.value.i18nCode}" default="${baseLayer.value.displayName}"/></option>
                                 </g:each>
                             </select>
