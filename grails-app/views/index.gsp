@@ -1,9 +1,9 @@
-<g:set var="hubDisplayName" value="${grailsApplication.config.skin.orgNameLong}"/>
+<g:set var="hubDisplayName" value="${grailsApplication.config.getProperty('skin.orgNameLong')}"/>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Home | ${hubDisplayName}</title>
-		<meta name="layout" content="${grailsApplication.config.skin.layout}"/>
+		<meta name="layout" content="${grailsApplication.config..getProperty('skin.layout')}"/>
 	</head>
 	<body>
 		<div id="headingBar" class="heading-bar">
