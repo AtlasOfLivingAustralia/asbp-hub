@@ -63,6 +63,7 @@
         <asset:javascript src="asbp.js"/>
         <asset:javascript src="biocache-hubs.js" />
         <asset:javascript src="seedpartnership/seedpartnership.js"/>
+        <script src="https://cdn.usefathom.com/script.js" data-site="QDWZORBB" defer></script>
 
         <g:render template="/layouts/global" plugin="biocache-hubs"/>
 
